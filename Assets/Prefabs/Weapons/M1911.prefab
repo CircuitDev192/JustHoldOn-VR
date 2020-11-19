@@ -676,18 +676,18 @@ MonoBehaviour:
   slideForwardSpeed: 40
   slideBackSpeed: 50
   dropSlideForwardSpeed: 20
-  slideStopPosition: 0
-  catchBulletPosition: 0
+  slideStopPosition: 0.1
+  catchBulletPosition: 0.5
   restingOnSlideStop: 0
   slideStopObject: {fileID: 0}
   slideStopRotations:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   slideStopInput:
-    actionPath: 
+    actionPath: /actions/VArmory/in/A
     needsReinit: 0
   slideStopTouchpadDirection: 6
-  slideStopFunction: 0
+  slideStopFunction: 1
 --- !u!1 &7526012737163496759
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +788,7 @@ GameObject:
   - component: {fileID: 7526068782333563942}
   - component: {fileID: 7526068782333563943}
   - component: {fileID: 7526068782333563944}
+  - component: {fileID: 608699816855796269}
   m_Layer: 0
   m_Name: M1911
   m_TagString: Untagged
@@ -1307,6 +1308,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sockets: []
+--- !u!114 &608699816855796269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7526068782333563945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38aabb7db274c9841ae614e995145329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabSounds: []
+  dropSounds: []
+  lastFX: []
+  fxIndex: 0
+  soundFadeTime: 0.5
+  soundDelayTime: 0.1
+  actionBackSounds: []
+  actionFowardSounds: []
+  fireSounds:
+  - {fileID: 8300000, guid: 101a2d572f0e92a438025a65052d4c3c, type: 3}
+  - {fileID: 8300000, guid: 1da14e1031244be4e8ea2c87abf1c98b, type: 3}
+  - {fileID: 8300000, guid: 8d9840f0e571df340a37e4387099c0cf, type: 3}
+  - {fileID: 8300000, guid: 9882bbd65b47a2449a29ea24cdb1e637, type: 3}
+  - {fileID: 8300000, guid: df28e902af4152d46acf2aaeeafad7ed, type: 3}
+  - {fileID: 8300000, guid: fdb023de6ecea8241bb2e1ee720a6b16, type: 3}
+  suppressedFireSounds: []
+  dryFireSounds: []
+  loadMagazineSounds: []
+  unloadMagazineSounds: []
+  restOnSlideStopSounds: []
 --- !u!1 &7526120979390801757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,7 +1439,7 @@ MonoBehaviour:
   poseType: 0
   poseAxis: 2
   poseInputScale: 0.005
-  hammer: {fileID: 0}
+  hammer: {fileID: 7526400821226216284}
 --- !u!1 &7526400821226216285
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,11 +29,12 @@ namespace VArmory
                 maxSliderDistance = value ? slideStopPosition : 1;
 
                 slideStop = value;
-
                 if (!slideStop)
                     if (restingOnSlideStop && !interactionPoint)
-                        if (dropSlideForwardSpeed > 0 && slideForward == null)
+                        if (dropSlideForwardSpeed > 0 && slideForward == null) //in case the slide stop ever causes issues, check the stop slide anim finc
+                        {
                             StartCoroutine("AnimateSlideForward", dropSlideForwardSpeed);
+                        }
             }
         }
 
@@ -154,6 +155,7 @@ namespace VArmory
             StopCoroutine("AnimateSlideForward");
             if (slideBack != null) StopCoroutine(slideBack);
             if (slideForward != null) StopCoroutine(slideForward);
+            slideForward = null; //this MIGHT cause issues later on. 
         }
 
         public override void DetachSlide()

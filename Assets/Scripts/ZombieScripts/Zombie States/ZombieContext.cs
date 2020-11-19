@@ -146,8 +146,6 @@ public abstract class ZombieContext : Context<ZombieContext>, IDamageAble
                 break;
         }
 
-
-
         health -= finalDamage;
 
         if (health <= 0){
