@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sockets:
-  - {fileID: 0}
+  - {fileID: 1374105172}
 --- !u!114 &1243129008153404577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,7 +2035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5955693246976810300
 Transform:
   m_ObjectHideFlags: 0

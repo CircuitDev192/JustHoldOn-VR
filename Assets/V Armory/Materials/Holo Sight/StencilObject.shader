@@ -11,7 +11,7 @@ Shader "Custom/StencilObject" {
 
 	SubShader 
 	{
-		Tags {"Queue"="Geometry" "RenderType"="Opaque" }
+		Tags {"Queue"="Geometry" "RenderType"="Opaque" "RenderPipeline" = "UniversalPipeline" "LightMode" = "UniversalForward"}
 		LOD 200
 
 		ZTest always
