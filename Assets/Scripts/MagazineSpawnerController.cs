@@ -11,7 +11,7 @@ namespace VArmory
 
         InteractionVolume iv;
 
-        void Start()
+        private void Start()
         {
             iv = GetComponent<InteractionVolume>();
             iv._StartInteraction += SpawnMagazine;
