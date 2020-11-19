@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4289286009569062}
   - component: {fileID: 96890285501208774}
   - component: {fileID: 114550217905517532}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 135187102401838086}
   - component: {fileID: 54720225532207836}
   - component: {fileID: 114311604091937606}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,9 @@ MonoBehaviour:
   rb: {fileID: 54720225532207836}
   col: {fileID: 135187102401838086}
   muzzleVelocity: 50
+  baseDamage: 20
   explosive: {fileID: 0}
+  impactForce: 2
   unchildOnCollision: []
   pellets: 0
   destroyOnImpact: 1

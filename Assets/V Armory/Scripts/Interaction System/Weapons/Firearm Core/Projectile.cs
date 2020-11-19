@@ -15,11 +15,11 @@ namespace VArmory
 
         //[SerializeField] protected float forceDamp = 10f;
 
-        //[SerializeField] protected float baseDamage = 100;
+        [SerializeField] protected float baseDamage = 100;
         //[SerializeField] protected float maxDistance = 100;
 
         [SerializeField] protected Explosive explosive;
-        //[SerializeField] protected float extraForce;
+        [SerializeField] protected float impactForce;
         //[SerializeField] protected float trauma = 0.25f;
 
         public Transform[] unchildOnCollision;
@@ -47,7 +47,16 @@ namespace VArmory
 
         void OnCollisionEnter(Collision col)
         {
-            Effect(col, true);
+            //Effect(col, true);
+
+            if (col.gameObject.CompareTag("Enemy"))
+            {
+                //Hit an enemy/target
+                //add force to enemy
+                //damage enemy
+                col.transform.gameObject.GetComponentInParent<IDamageAble>().Damage(baseDamage);
+                col.rigidbody.AddForce(-col.contacts[0].normal * impactForce, ForceMode.Impulse);
+            }
 
             if (explosive) explosive.enabled = true;
 

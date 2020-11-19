@@ -12,6 +12,7 @@ namespace VArmory
         public bool linearMovement = false;
 
         public Hand currentHand;
+        public Hand offHand;
         public Hand defaultHand;
 
         [SerializeField]
@@ -22,6 +23,7 @@ namespace VArmory
         public float maxHeight = 2;
 
         public float movementSpeed;
+        public float turnSpeed;
         public float fallingMovementSpeedScale;
         public float sprintScale;
 
@@ -156,11 +158,14 @@ namespace VArmory
 
             float sprintInput = sprinting ? sprintScale : 1;
 
-            Vector3 movement = ((new Vector3(currentHand.transform.forward.x, 0, currentHand.transform.forward.z).normalized
+            Vector3 movement = ((new Vector3(head.transform.forward.x, 0, head.transform.forward.z).normalized
                                     * (linearMovement ? (movementAxis.GetAxis(currentHand.inputSource).y != 0 ? 1 : 0) : movementAxis.GetAxis(currentHand.inputSource).y))
-                              + (new Vector3(currentHand.transform.right.x, 0, currentHand.transform.right.z).normalized
+                              + (new Vector3(head.transform.right.x, 0, head.transform.right.z).normalized
                                     * (linearMovement ? (movementAxis.GetAxis(currentHand.inputSource).x != 0 ? 1 : 0) : movementAxis.GetAxis(currentHand.inputSource).x)))
                                 * movementSpeed * sprintInput * (Time.deltaTime) * (fallingTime > 0.1f ? fallingMovementSpeedScale : 1);
+
+            //Rotate the head when pushing left and right on right stick
+            rig.transform.RotateAround(head.transform.position, Vector3.up, (movementAxis.GetAxis(offHand.inputSource).x * turnSpeed));
 
             RaycastHit hit;
             Collider[] collider = Physics.OverlapSphere(head.position, characterController.radius * 2f, door);
