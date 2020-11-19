@@ -47,14 +47,14 @@ namespace VArmory
 
         void OnCollisionEnter(Collision col)
         {
-            //Effect(col, true);
+            Effect(col, true);
 
-            if (col.gameObject.CompareTag("Enemy"))
+            if (col.gameObject.CompareTag("zombie"))
             {
                 //Hit an enemy/target
                 //add force to enemy
                 //damage enemy
-                col.transform.gameObject.GetComponentInParent<IDamageAble>().Damage(baseDamage);
+                col.transform.gameObject.GetComponentInParent<IDamageAble>().Damage(baseDamage, col.gameObject.name);
                 col.rigidbody.AddForce(-col.contacts[0].normal * impactForce, ForceMode.Impulse);
             }
 
@@ -109,14 +109,14 @@ namespace VArmory
             {
                 BulletImpactEffect impactEffect = impactEffects[i];
 
-                if (col.gameObject.tag == impactEffect.hitObjectTag)
+                if (col.gameObject.CompareTag(impactEffect.hitObjectTag))
                 {
                     GameObject clone = null;
                     GameObject particleEffect = ENTEREXIT ? impactEffect.impactParticle : impactEffect.exitParticle;
                     //AudioClip audioEffect = ENTEREXIT ? impactEffect.impactAudio[Random.Range(0, impactEffect.impactAudio.Length - 1)] : impactEffect.exitAudio[Random.Range(0, impactEffect.exitAudio.Length - 1)];
 
                     if (particleEffect)
-                    {
+                    { 
                         clone = Instantiate(particleEffect,
                             col.contacts[0].point + col.contacts[0].normal * 0.01f,
                             Quaternion.FromToRotation(Vector3.forward, col.contacts[0].normal)) as GameObject;

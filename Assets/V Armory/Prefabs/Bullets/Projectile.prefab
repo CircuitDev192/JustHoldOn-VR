@@ -83,28 +83,21 @@ MonoBehaviour:
   impactForce: 2
   unchildOnCollision: []
   pellets: 0
-  destroyOnImpact: 1
+  destroyOnImpact: 0
   destroyDelay: 0
   impactEffects:
-  - hitObjectTag: Red
-    impactParticle: {fileID: 1368347327041122, guid: a12a2b769b3c7ad47b7c3d76d4c2898e,
+  - hitObjectTag: zombie
+    impactParticle: {fileID: 2892289106688674239, guid: 8a3ea20717c8ca04080a7d868f6e5fff,
       type: 3}
     impactAudio: []
-    exitParticle: {fileID: 1368347327041122, guid: a12a2b769b3c7ad47b7c3d76d4c2898e,
+    exitParticle: {fileID: 2892289106688674239, guid: 8a3ea20717c8ca04080a7d868f6e5fff,
       type: 3}
     exitAudio: []
-  - hitObjectTag: Green
-    impactParticle: {fileID: 1431086575392588, guid: 0bea531b4de58174b817e69326204ff3,
+  - hitObjectTag: Environment
+    impactParticle: {fileID: 4959502850054142828, guid: 10be5bd801d74c9438c4af806db4a606,
       type: 3}
     impactAudio: []
-    exitParticle: {fileID: 1431086575392588, guid: 0bea531b4de58174b817e69326204ff3,
-      type: 3}
-    exitAudio: []
-  - hitObjectTag: Blue
-    impactParticle: {fileID: 1129256726875550, guid: 7b3274542f0000f4993c8cc1d781a1e1,
-      type: 3}
-    impactAudio: []
-    exitParticle: {fileID: 1129256726875550, guid: 7b3274542f0000f4993c8cc1d781a1e1,
+    exitParticle: {fileID: 4959502850054142828, guid: 10be5bd801d74c9438c4af806db4a606,
       type: 3}
     exitAudio: []
 --- !u!1 &1887074887980620

@@ -126,11 +126,29 @@ public abstract class ZombieContext : Context<ZombieContext>, IDamageAble
         }
     }
 
-    public void Damage(float damage)
+    public void Damage(float damage, string limbName)
     {
         if (currentState == deadState) return;
 
-        health -= damage;
+        //calculate final damage based on limb hit using limb name
+        float finalDamage;
+        switch (limbName)
+        {
+            case "Head_jnt":
+                finalDamage = health;
+                break;
+            case "Chest_jnt":
+            case "Hips_jnt":
+                finalDamage = damage;
+                break;
+            default:
+                finalDamage = 0.7f * damage;
+                break;
+        }
+
+
+
+        health -= finalDamage;
 
         if (health <= 0){
             Debug.LogWarning("Played death sound.");

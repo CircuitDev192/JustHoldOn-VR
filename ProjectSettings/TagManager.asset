@@ -9,6 +9,7 @@ TagManager:
   - Hand
   - Item
   - Enemy
+  - Environment
   layers:
   - Default
   - TransparentFX
