@@ -105,6 +105,7 @@ namespace VArmory
                 }
 
                 tempSource.volume = 1;
+                tempSource.spatialBlend = 1;
                 tempSource.clip = randomAudioClipClone;
                 tempSource.Play();
 
