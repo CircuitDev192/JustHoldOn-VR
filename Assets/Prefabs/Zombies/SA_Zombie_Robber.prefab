@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1450170679419873814}
   - component: {fileID: 4003036938419662780}
   - component: {fileID: 7288354108565896026}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Arm_Left_jnt
   m_TagString: zombie
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 687799593448204254}
   - component: {fileID: 4223442260881434168}
   - component: {fileID: 6636936094591071228}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Head_jnt
   m_TagString: zombie
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888327757}
   - component: {fileID: 8903468910900072109}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Prisoner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888238485}
   - component: {fileID: 8903468910899983545}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_FemalePyro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8903468910888262613}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Foot_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8903468910888230145}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Shoulder_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888303223}
   - component: {fileID: 8903468910900065529}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Businessman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888258811}
   - component: {fileID: 8903468910899993327}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Cheerleader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,7 +704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888338271}
   - component: {fileID: 8903468910900004077}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_Male_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888333047}
   - component: {fileID: 8903468910900081433}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Bellhop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -912,7 +912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888330807}
   - component: {fileID: 8903468910900009477}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_InjuredMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 8903468910888284873}
   - component: {fileID: 6281669189620428141}
   - component: {fileID: 2626311089163797089}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Hips_jnt
   m_TagString: zombie
   m_Icon: {fileID: 0}
@@ -1080,7 +1080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888341975}
   - component: {fileID: 8903468910900011171}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_FemaleTrenchcoat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 4239374257287814488}
   - component: {fileID: 8481087491343701516}
   - component: {fileID: 7965301557227591300}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Forearm_Right_jnt
   m_TagString: zombie
   m_Icon: {fileID: 0}
@@ -1293,7 +1293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888342489}
   - component: {fileID: 8903468910899960817}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_Prisoner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1396,7 +1396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8903468910888342283}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Toe_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1426,7 +1426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8903468910888253037}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Foot_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1460,7 +1460,7 @@ GameObject:
   - component: {fileID: 1566078057127566271}
   - component: {fileID: 3518511372552453467}
   - component: {fileID: 6396319626635092171}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: UpperLeg_Left_jnt
   m_TagString: zombie
   m_Icon: {fileID: 0}
@@ -1566,7 +1566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8903468910888336261}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Shoulder_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1598,7 +1598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888246779}
   - component: {fileID: 8903468910899971915}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Santa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1701,7 +1701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8903468910888247465}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Hand_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1732,7 +1732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888330397}
   - component: {fileID: 8903468910900013147}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_OldMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1838,7 +1838,7 @@ GameObject:
   - component: {fileID: 1826732638683529136}
   - component: {fileID: 2195598893202767106}
   - component: {fileID: 6144161562884947204}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Arm_Right_jnt
   m_TagString: zombie
   m_Icon: {fileID: 0}
@@ -1945,7 +1945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888350453}
   - component: {fileID: 8903468910900061489}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_AirportSecurity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2049,7 +2049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888349243}
   - component: {fileID: 8903468910900071983}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_RoadWorker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2153,7 +2153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888331661}
   - component: {fileID: 8903468910900010801}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Streetman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2257,7 +2257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888283981}
   - component: {fileID: 8903468910900015727}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_FootballPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2361,7 +2361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888228327}
   - component: {fileID: 8903468910900011637}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2467,7 +2467,7 @@ GameObject:
   - component: {fileID: 2027796061837756785}
   - component: {fileID: 600702941157872799}
   - component: {fileID: 5965033802382678154}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Forearm_Left_jnt
   m_TagString: zombie
   m_Icon: {fileID: 0}
@@ -2574,7 +2574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888235197}
   - component: {fileID: 8903468910899993667}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_MaleTrenchcoat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2678,7 +2678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888331221}
   - component: {fileID: 8903468910900078559}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Runner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2784,7 +2784,7 @@ GameObject:
   - component: {fileID: 7178134077428035570}
   - component: {fileID: 5457221664154891564}
   - component: {fileID: 3261583903641945570}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Chest_jnt
   m_TagString: zombie
   m_Icon: {fileID: 0}
@@ -2892,7 +2892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888268395}
   - component: {fileID: 8903468910900070595}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_FarmersDaughter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2996,7 +2996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888255915}
   - component: {fileID: 8903468910899984861}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_Biohazard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3100,7 +3100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888328485}
   - component: {fileID: 8903468910899984309}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Pimp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3204,7 +3204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888297247}
   - component: {fileID: 8903468910900001751}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Tourist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3308,7 +3308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888332997}
   - component: {fileID: 8903468910900058091}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Hobo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3412,7 +3412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888302307}
   - component: {fileID: 8903468910900010221}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_Businessman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3516,7 +3516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888326851}
   - component: {fileID: 8903468910900080253}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_Farmer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3620,7 +3620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888223539}
   - component: {fileID: 8903468910899956829}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Mechanic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3724,7 +3724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888352173}
   - component: {fileID: 8903468910899986713}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Roadworker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3828,7 +3828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888332367}
   - component: {fileID: 8903468910900063197}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Prostitute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3931,7 +3931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8903468910888251337}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Hand_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3962,7 +3962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888274591}
   - component: {fileID: 8903468910900063465}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Soldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4066,7 +4066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888342507}
   - component: {fileID: 8903468910900062193}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_Male_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4170,7 +4170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888262037}
   - component: {fileID: 8903468910899976485}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_MaleHunter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4273,7 +4273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8903468910888275257}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Spine_jnt 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4305,7 +4305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888352551}
   - component: {fileID: 8903468910900067469}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_Male_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4409,7 +4409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888230647}
   - component: {fileID: 8903468910900008891}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Robber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4513,7 +4513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888232579}
   - component: {fileID: 8903468910900070449}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_FemaleSoldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4617,7 +4617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888285791}
   - component: {fileID: 8903468910900064093}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Firefighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4721,7 +4721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888344813}
   - component: {fileID: 8903468910900016899}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Shopkeeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4825,7 +4825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888243227}
   - component: {fileID: 8903468910900007527}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_HoodedMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4929,7 +4929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888348833}
   - component: {fileID: 8903468910899989301}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Mountie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5033,7 +5033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888227853}
   - component: {fileID: 8903468910900009177}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Clown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5137,7 +5137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888227655}
   - component: {fileID: 8903468910900011847}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Industrial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5241,7 +5241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888287141}
   - component: {fileID: 8903468910900061249}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_AirportWorker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5345,7 +5345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888239711}
   - component: {fileID: 8903468910900000959}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Farmer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5449,7 +5449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888304055}
   - component: {fileID: 8903468910899991149}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_Doctor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5552,7 +5552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8903468910888281665}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Spine_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5584,7 +5584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888300543}
   - component: {fileID: 8903468910899995487}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_Hazard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5688,7 +5688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888338049}
   - component: {fileID: 8903468910900007477}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_FemaleHero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5791,7 +5791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8903468910888250337}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Neck_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5825,7 +5825,7 @@ GameObject:
   - component: {fileID: 2277485437465612442}
   - component: {fileID: 2578861941153060849}
   - component: {fileID: 7091655553803801712}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LowerLeg_Right_jnt
   m_TagString: zombie
   m_Icon: {fileID: 0}
@@ -5931,7 +5931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8903468910888286795}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Toe_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5962,7 +5962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888252529}
   - component: {fileID: 8903468910899959319}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Trucker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6066,7 +6066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888226517}
   - component: {fileID: 8903468910900081479}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Pilot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6173,7 +6173,7 @@ GameObject:
   - component: {fileID: 8798136960832535453}
   - component: {fileID: 195570940181768128}
   - component: {fileID: -7447447068559111473}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Robber
   m_TagString: zombie
   m_Icon: {fileID: 0}
@@ -6504,7 +6504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888350493}
   - component: {fileID: 8903468910900011885}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_Sheriff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6608,7 +6608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888229373}
   - component: {fileID: 8903468910900070467}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Zombie_Grandma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6712,7 +6712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903468910888234985}
   - component: {fileID: 8903468910900074843}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SA_Char_Survivor_Scout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6818,7 +6818,7 @@ GameObject:
   - component: {fileID: 4444104561010249862}
   - component: {fileID: 2115913977279590421}
   - component: {fileID: 7453702231541044088}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LowerLeg_Left_jnt
   m_TagString: zombie
   m_Icon: {fileID: 0}
@@ -6927,7 +6927,7 @@ GameObject:
   - component: {fileID: 6397287613257297957}
   - component: {fileID: 4886968054912541980}
   - component: {fileID: 6360586394846032021}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: UpperLeg_Right_jnt
   m_TagString: zombie
   m_Icon: {fileID: 0}

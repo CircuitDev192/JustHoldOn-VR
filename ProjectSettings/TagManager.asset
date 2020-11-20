@@ -28,7 +28,7 @@ TagManager:
   - HeldItem
   - InventoryItem
   - Door
-  - 
+  - Zombie
   - PostProcessing
   - 
   - 
