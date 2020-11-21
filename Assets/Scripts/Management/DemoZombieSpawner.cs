@@ -24,8 +24,8 @@ public class DemoZombieSpawner : MonoBehaviour
 
     private void Start()
     {
-        //EventManager.zombieShouldDespawn += DespawnZombie;
-        //EventManager.ZombieKilled += ZombieDied;
+        EventManager.zombieShouldDespawn += DespawnZombie;
+        EventManager.ZombieKilled += ZombieDied;
     }
 
     private void FixedUpdate()
