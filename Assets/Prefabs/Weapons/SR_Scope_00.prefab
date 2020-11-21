@@ -227,7 +227,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   type: 1
-  AttachmentPosOffset: {x: 0, y: 0, z: 0}
+  AttachmentPosOffset: {x: 0, y: 0.0445, z: 0}
   AttachmentRotOffset: {x: 0, y: 0, z: 0}
   primaryAttachDotAxis: 4
   secondaryAttachDotAxis: 0
