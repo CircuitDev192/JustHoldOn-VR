@@ -333,8 +333,8 @@ MonoBehaviour:
   eject: {fileID: 960904986}
   bullets:
   - {fileID: 960904987}
-  bulletTag: Cube Bullet
-  bulletClone: {fileID: 114053158939501320, guid: 5bd21417fa3405a4aa07e0414da0cbd6,
+  bulletTag: 556x45NATO
+  bulletClone: {fileID: 114053158939501320, guid: 390bfce470f72aa429ac02fba252fc9f,
     type: 3}
   swipeToEjectDistance: 0.25
   maxRounds: 30
