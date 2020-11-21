@@ -49,12 +49,11 @@ namespace VArmory
         {
             Effect(col, true);
 
-            if (col.gameObject.CompareTag("zombie"))
+            IDamageAble damageAble = col.gameObject.GetComponentInParent<IDamageAble>();
+
+            if (damageAble != null)
             {
-                //Hit an enemy/target
-                //add force to enemy
-                //damage enemy
-                col.transform.gameObject.GetComponentInParent<IDamageAble>().Damage(baseDamage, col.gameObject.name);
+                damageAble.Damage(baseDamage, col.gameObject.name);
                 col.rigidbody.AddForce(-col.contacts[0].normal * impactForce, ForceMode.Impulse);
             }
 

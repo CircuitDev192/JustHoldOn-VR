@@ -5,12 +5,13 @@ using Valve.VR;
 
 namespace VArmory
 {
-    public class Grenade : ExplosiveItem
+    public class Grenade : ExplosiveItem, IDamageAble
     {
         [SerializeField] protected SocketSlide pinSlide;
 
         [SerializeField] protected Collider handleCol;
         [SerializeField] protected Rigidbody handleRb;
+        [SerializeField] protected Transform leverPivot;
         [SerializeField] protected float handleRotateSpeed;
         [SerializeField] protected float handleEjectForce;
         public Transform pin;
@@ -59,7 +60,14 @@ namespace VArmory
             if (armed) StartCoroutine(EjectHandle());
         }
 
-        public override void Arm() { armed = true; }
+        public override void Arm()
+        {
+            armed = true;
+            if (!PrimaryHand)
+            {
+                StartCoroutine(EjectHandle());
+            }
+        }
 
         void OnCollisionEnter(Collision col)
         {
@@ -76,7 +84,7 @@ namespace VArmory
                 while (angle < 90)
                 {
                     angle += handleRotateSpeed * Time.deltaTime;
-                    handleRb.transform.Rotate(Vector3.right, -handleRotateSpeed * Time.deltaTime);
+                    handleRb.transform.RotateAround(leverPivot.position, transform.right, handleRotateSpeed * Time.deltaTime);
                     yield return null;
                 }
 
@@ -85,10 +93,15 @@ namespace VArmory
                 handleCol.transform.parent = null;
                 handleCol.isTrigger = false;
 
-                handleRb.AddForceAtPosition(transform.up * handleEjectForce, transform.position, ForceMode.Impulse);
+                handleRb.AddForceAtPosition((-transform.forward + transform.up) * handleEjectForce, transform.position, ForceMode.Impulse);
             }
 
             yield return ExplodeRoutine();
+        }
+
+        public void Damage(float damage, string limbName)
+        {
+            explosive.Explode(0);
         }
     }
 }

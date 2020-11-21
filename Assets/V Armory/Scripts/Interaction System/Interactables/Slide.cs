@@ -30,8 +30,9 @@ namespace VArmory
 
         public Vector3 StartPosition { get { return startPosition ? startPosition.position: Vector3.zero; } }
         public Vector3 EndPosition { get { return endPosition ? endPosition.position : Vector3.zero; } }
-
-        [ReadOnly] public Transform slideObject;
+        
+        //[ReadOnly]
+        public Transform slideObject;
 
         protected float sliderOffset;
         protected float handOffset;

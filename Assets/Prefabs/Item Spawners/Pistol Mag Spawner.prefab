@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3831242594305120467}
   - component: {fileID: 3138699372728533081}
   - component: {fileID: 5010387084328032786}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pistol Mag Spawner
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3831242594539509099}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

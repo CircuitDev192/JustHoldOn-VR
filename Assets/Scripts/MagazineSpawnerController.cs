@@ -14,6 +14,12 @@ namespace VArmory
         private void Start()
         {
             iv = GetComponent<InteractionVolume>();
+
+            if (!iv)
+            {
+                Debug.LogError("Interaction Volume on Magazine Spawner is invalid");
+            }
+
             iv._StartInteraction += SpawnMagazine;
         }
 

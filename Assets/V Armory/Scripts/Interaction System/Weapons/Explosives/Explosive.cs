@@ -70,6 +70,14 @@ namespace VArmory
                     rigidbodies.Add(col.attachedRigidbody);
                 }
 
+                //damage IDamageAbles
+                IDamageAble damageAble = col.gameObject.GetComponentInParent<IDamageAble>();
+                if (damageAble != null)
+                {
+                    damageAble.Damage(baseDamage, col.gameObject.name);
+                }
+
+
                 if (detonateOtherExplosives)
                     if (col.tag == "Explosive")
                     {
