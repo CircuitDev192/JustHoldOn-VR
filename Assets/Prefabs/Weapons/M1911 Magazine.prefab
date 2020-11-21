@@ -181,7 +181,7 @@ MonoBehaviour:
     colliderEnabled: 1
     isTrigger: 0
     parent: 0
-  positionOffset: {x: 0, y: 0.091602616, z: 0.04133973}
+  positionOffset: {x: 0, y: 0.091602616, z: -0.04133973}
   rotationOffset: {x: -0.0000034150946, y: 180, z: -4.4071056e-14}
   flippedPositionOffset: {x: 0, y: 0, z: 0}
   flippedRotationOffset: {x: 0, y: 0, z: 0}
