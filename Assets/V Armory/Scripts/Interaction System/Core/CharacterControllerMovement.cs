@@ -165,7 +165,7 @@ namespace VArmory
                                 * movementSpeed * sprintInput * (Time.deltaTime) * (fallingTime > 0.1f ? fallingMovementSpeedScale : 1);
 
             //Rotate the head when pushing left and right on right stick
-            rig.transform.RotateAround(head.transform.position, Vector3.up, (movementAxis.GetAxis(offHand.inputSource).x * turnSpeed));
+            //rig.transform.RotateAround(head.transform.position, Vector3.up, (movementAxis.GetAxis(offHand.inputSource).x * turnSpeed));
 
             RaycastHit hit;
             Collider[] collider = Physics.OverlapSphere(head.position, characterController.radius * 2f, door);

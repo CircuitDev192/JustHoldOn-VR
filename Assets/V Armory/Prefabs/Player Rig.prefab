@@ -10128,7 +10128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementAxis:
-    actionPath: /actions/VArmory/in/JoystickAxis
+    actionPath: /actions/VArmory/in/TouchpadAxis
     needsReinit: 0
   linearMovement: 0
   currentHand: {fileID: 6662868148112982652}

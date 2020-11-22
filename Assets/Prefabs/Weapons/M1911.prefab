@@ -684,9 +684,9 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   slideStopInput:
-    actionPath: /actions/VArmory/in/A
-    needsReinit: 0
-  slideStopTouchpadDirection: 6
+    actionPath: 
+    needsReinit: 1
+  slideStopTouchpadDirection: 2
   slideStopFunction: 1
 --- !u!1 &7526012737163496759
 GameObject:
@@ -963,6 +963,9 @@ MonoBehaviour:
   muzzleVelocity: 0
   spread: 0
   slideEjectVelocity: 0
+  allowOffHandStabilization: 1
+  offhandStabilizationDistance: 0
+  hands: []
 --- !u!114 &7526068782333563941
 MonoBehaviour:
   m_ObjectHideFlags: 0

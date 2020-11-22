@@ -34,6 +34,10 @@ namespace VArmory
 
         protected bool enableSlideAudio = true;
 
+        public bool allowOffHandStabilization = false;
+        public float offhandStabilizationDistance = 0f;
+        public Hand[] hands;
+
         protected override void Start()
         {
             base.Start();
@@ -245,6 +249,19 @@ namespace VArmory
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
+
+
+            //USE A SPHERE COLLIDER ON EACH HAND, IF THEY COLLIDE, AND ONE HAND IS HOLDING A FIREARM, AND ALLOWOFFHANDSTABILIZATION IS ON, SCALE RECOIL. 
+            if (PrimaryGrip && allowOffHandStabilization && Vector3.Distance(hands[0].transform.position, hands[1].transform.position) < offhandStabilizationDistance)
+            {
+                recoilManager.ScaleRotation(0.1f, 0.1f, 1, 0.1f, 1);
+                recoilManager.ScaleTranslation(0.5f, 0.5f, 1, 0.5f, 1);
+            }
+            else if (allowOffHandStabilization)
+            {
+                recoilManager.UnscaleRotation();
+                recoilManager.UnscaleTranslation();
+            }
         }
 
         bool releasedTriggerAfterPickUp = true;
