@@ -28,6 +28,8 @@ namespace VArmory
         [SerializeField] protected bool destroyOnImpact = true;
         [SerializeField] protected float destroyDelay = 0.05f;
 
+        private Vector3 prevFrameVelocity;
+
         [System.Serializable]
         public struct BulletImpactEffect
         {
@@ -43,6 +45,11 @@ namespace VArmory
         void Start()
         {
             Destroy(gameObject, 7.5f);
+        }
+
+        private void FixedUpdate()
+        {
+            prevFrameVelocity = rb.velocity;
         }
 
         void OnCollisionEnter(Collision col)
