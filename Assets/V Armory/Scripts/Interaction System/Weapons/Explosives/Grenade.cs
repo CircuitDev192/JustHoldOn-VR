@@ -28,6 +28,7 @@ namespace VArmory
             pinSlide = GetComponentInChildren<SocketSlide>();
             explosive = GetComponent<Explosive>();
             pinSlide._OnReachedStart += Arm;
+            pinSlide._OnReachedEnd += Disarm;
 
             IgnoreCollision(pin.GetComponent<Collider>(), true);
 
@@ -67,6 +68,11 @@ namespace VArmory
             {
                 StartCoroutine(EjectHandle());
             }
+        }
+
+        public override void Disarm()
+        {
+            armed = false;
         }
 
         void OnCollisionEnter(Collision col)

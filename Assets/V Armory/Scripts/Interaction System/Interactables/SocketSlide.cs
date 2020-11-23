@@ -63,6 +63,12 @@ namespace VArmory
 
         [SerializeField] protected bool resetSlideOnLoad;
 
+        public float potentialSlideRbMass;
+        public float potentialSlideRbDrag;
+        public float potentialSlideRbAngularDrag;
+        public bool potentialSlideRbUseGravity;
+        public bool potentialSlideRbIsKinematic;
+
         protected void Awake()
         {
             _OnReachedEnd += LoadSlider;
@@ -300,6 +306,12 @@ namespace VArmory
             if (potentialSlot) potentialSlot.UnstoreItem();
             potentialSlider.dropStack = true;
 
+            potentialSlideRbMass = potentialSlider.Rb.mass;
+            potentialSlideRbDrag = potentialSlider.Rb.drag;
+            potentialSlideRbAngularDrag = potentialSlider.Rb.angularDrag;
+            potentialSlideRbUseGravity = potentialSlider.Rb.useGravity;
+            potentialSlideRbIsKinematic = potentialSlider.Rb.isKinematic;
+
             Destroy(potentialSlider.Rb);
 
             potentialSlider.SetPhysics(true, false, true, false);
@@ -391,6 +403,11 @@ namespace VArmory
             if (!potentialSlider.Rb)
             {
                 potentialSlider.rb = potentialSlider.gameObject.AddComponent<Rigidbody>();
+                potentialSlider.Rb.mass = potentialSlideRbMass;
+                potentialSlider.Rb.drag = potentialSlideRbDrag;
+                potentialSlider.Rb.angularDrag = potentialSlideRbAngularDrag;
+                potentialSlider.Rb.useGravity = potentialSlideRbUseGravity;
+                potentialSlider.Rb.isKinematic = potentialSlideRbIsKinematic;
             }
 
             if (AutoEquipRemovedSlide() == false)

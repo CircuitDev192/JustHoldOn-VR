@@ -23,6 +23,7 @@ namespace VArmory
 
         [SerializeField] protected int maxRounds;
         [SerializeField] protected int currentRounds;
+        [SerializeField] protected float weightOfEmptyMag;
 
         [SerializeField] protected bool requireHeldBullets = true;
 
@@ -36,6 +37,9 @@ namespace VArmory
             set
             {
                 currentRounds = Mathf.Clamp(value, 0, maxRounds);
+                //Because socket slide removes the rb, this line can't work, as the rb is null. 
+                //Need to make rbs play nice so they dont have to be deleted. Then this can work.
+                //rb.mass = weightOfEmptyMag + ((savedBullets.Count > 0 ? savedBullets[0].rb.mass : 0) * currentRounds);
                 UpdateBulletRenderers();
             }
         }
@@ -60,6 +64,9 @@ namespace VArmory
             while (savedBullets.Count < currentRounds)
             {
                 Bullet bullet = Instantiate(bulletClone, transform.position, transform.rotation);
+
+                //Clamp?
+                rb.mass += bullet.rb.mass;
 
                 bullet.GetComponentInChildren<MeshRenderer>().enabled = false;
                 bullet.Restrained = true;
