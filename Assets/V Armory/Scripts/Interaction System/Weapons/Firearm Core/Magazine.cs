@@ -220,7 +220,7 @@ namespace VArmory
             if (Restrained)
                 return;
 
-            if (other.gameObject.tag != "Interactable")
+            if (!other.gameObject.CompareTag("Interactable"))
                 return;
 
             Bullet tempBullet = other.GetComponent<Bullet>();

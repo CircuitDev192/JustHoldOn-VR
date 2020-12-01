@@ -342,7 +342,7 @@ MonoBehaviour:
   weightOfEmptyMag: 0.1389
   requireHeldBullets: 1
   ejectBulletInput:
-    actionPath: 
+    actionPath: /actions/VArmory/in/B
     needsReinit: 0
   tapedMagazine: {fileID: 0}
 --- !u!135 &9008047347807394343
@@ -356,8 +356,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.087039635
-  m_Center: {x: 0, y: -0.035089865, z: 0.020738307}
+  m_Radius: 0.03
+  m_Center: {x: 0, y: 0.045, z: 0.03}
 --- !u!54 &1672010672919328504
 Rigidbody:
   m_ObjectHideFlags: 0

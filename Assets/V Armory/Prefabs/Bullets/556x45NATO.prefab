@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 4734330852592504}
   - component: {fileID: 33702091936773858}
   - component: {fileID: 23676744347678620}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Cube Pistol Bullet Highlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 54119546032884328}
   - component: {fileID: 114053158939501320}
   - component: {fileID: 114332477031725864}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: 556x45NATO
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -371,10 +371,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.005
-  m_Height: 0.025
+  m_Radius: 0.0065
+  m_Height: 0.069285065
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.033456244}
 --- !u!54 &54119546032884328
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -385,7 +385,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 0.0122
   m_Drag: 0.005
-  m_AngularDrag: 0.09
+  m_AngularDrag: 0.12
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
