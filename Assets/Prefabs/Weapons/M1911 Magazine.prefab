@@ -252,7 +252,8 @@ MonoBehaviour:
   loadBulletSound: []
   ejectBulletSound: []
   eject: {fileID: 8078564134437748775}
-  bullets: []
+  bullets:
+  - {fileID: 8088807390797738845}
   bulletTag: 45ACP
   bulletClone: {fileID: 114053158939501320, guid: 0bcff0bbca8d06146a7b7f2aa9663746,
     type: 3}

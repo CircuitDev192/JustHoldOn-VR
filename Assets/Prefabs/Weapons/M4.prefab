@@ -468,7 +468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604705629970185381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0704, z: 0.409}
+  m_LocalPosition: {x: 0, y: 0.0704, z: 0.4145}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 604705630124791374}
@@ -606,9 +606,9 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   slideStopInput:
-    actionPath: 
-    needsReinit: 1
-  slideStopTouchpadDirection: 2
+    actionPath: /actions/VArmory/in/A
+    needsReinit: 0
+  slideStopTouchpadDirection: 6
   slideStopFunction: 1
 --- !u!1 &604705630124791366
 GameObject:
@@ -866,10 +866,10 @@ MonoBehaviour:
   availableFireModes: 000000000100000002000000
   fireSelectorRotations: []
   safetySlideLimit: -1
-  touchpadDirection: 0
+  touchpadDirection: 6
   switchFireModeSounds: []
   fireSelectorInput:
-    actionPath: 
+    actionPath: /actions/VArmory/in/B
     needsReinit: 0
 --- !u!114 &604705630124791364
 MonoBehaviour:
@@ -1583,8 +1583,8 @@ MonoBehaviour:
   loadBulletDistance: 0.15
   loadBulletDot: 0.75
   requireHeldBullets: 1
-  ejectForce: 5
-  ejectTorque: 7.5
+  ejectForce: 0.0558
+  ejectTorque: 0.5
   eject: {fileID: 604705631727834937}
   chamberDotAxis: 4
   bulletDotAxis: 4
@@ -1789,6 +1789,11 @@ MonoBehaviour:
   loadedCenter: {x: 0, y: 0.007856973, z: 0.03176953}
   loadedSize: {x: 0.03, y: 0.1075153, z: 0.06378958}
   resetSlideOnLoad: 0
+  potentialSlideRbMass: 0
+  potentialSlideRbDrag: 0
+  potentialSlideRbAngularDrag: 0
+  potentialSlideRbUseGravity: 0
+  potentialSlideRbIsKinematic: 0
   snapPoser: {fileID: 0}
 --- !u!114 &604705631780624530
 MonoBehaviour:

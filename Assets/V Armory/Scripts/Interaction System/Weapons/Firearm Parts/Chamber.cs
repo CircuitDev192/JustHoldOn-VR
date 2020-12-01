@@ -139,8 +139,9 @@ namespace VArmory
             bullet.SetPhysics(true, false, true, true);
 
             bullet.transform.SetParent(transform, true);
+            //Should add an offset here to allow bullet to be placed anywhere, not just the chamber transform....
             bullet.transform.localPosition = Vector3.zero;
-            bullet.transform.localEulerAngles = Vector3.zero;
+            bullet.transform.localEulerAngles = Vector3.zero + new Vector3(0f,180f,0f); //When offset is added, change this back to not have the new Vector3
 
             bullet.MeshRenderer.enabled = true;
 

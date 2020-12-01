@@ -467,6 +467,11 @@ MonoBehaviour:
   loadedCenter: {x: 0, y: 0, z: 0}
   loadedSize: {x: 0, y: 0, z: 0}
   resetSlideOnLoad: 0
+  potentialSlideRbMass: 0
+  potentialSlideRbDrag: 0
+  potentialSlideRbAngularDrag: 0
+  potentialSlideRbUseGravity: 0
+  potentialSlideRbIsKinematic: 0
   snapPoser: {fileID: 0}
 --- !u!114 &7525842212330229642
 MonoBehaviour:
@@ -684,9 +689,9 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   slideStopInput:
-    actionPath: 
-    needsReinit: 1
-  slideStopTouchpadDirection: 2
+    actionPath: /actions/VArmory/in/A
+    needsReinit: 0
+  slideStopTouchpadDirection: 6
   slideStopFunction: 1
 --- !u!1 &7526012737163496759
 GameObject:
@@ -1024,10 +1029,10 @@ MonoBehaviour:
   availableFireModes: 0000000001000000
   fireSelectorRotations: []
   safetySlideLimit: -1
-  touchpadDirection: 0
+  touchpadDirection: 6
   switchFireModeSounds: []
   fireSelectorInput:
-    actionPath: 
+    actionPath: /actions/VArmory/in/B
     needsReinit: 0
 --- !u!114 &7526068782333563943
 MonoBehaviour:
