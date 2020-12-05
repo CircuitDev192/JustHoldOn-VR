@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 604705629781395713}
   - component: {fileID: 604705629781395712}
   - component: {fileID: 604705629781395715}
+  - component: {fileID: 3525390493918459224}
   m_Layer: 0
   m_Name: Highlight Bolt
   m_TagString: Untagged
@@ -247,6 +248,58 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3525390493918459224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604705629781395714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe91dc294731a9428c0941ea7579110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawingMode: 1
+  outlineLayer: 0
+  outlineTargets:
+  - edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    Renderer: {fileID: 604705629781395715}
+    SubmeshIndex: 0
+    ForceRecalculateBounds: 0
+    CutoutDescriptionType: 0
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  renderStyle: 1
+  outlineParameters:
+    enabled: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
+  backParameters:
+    enabled: 1
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
+  frontParameters:
+    enabled: 1
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
 --- !u!1 &604705629845425695
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +920,11 @@ MonoBehaviour:
   fireSelectorRotations: []
   safetySlideLimit: -1
   touchpadDirection: 6
-  switchFireModeSounds: []
+  switchFireModeSounds:
+  - {fileID: 8300000, guid: 82830cacd9ca15f459da345ab512dea4, type: 3}
+  - {fileID: 8300000, guid: cf78e4f89eab28449870d97cb30aff59, type: 3}
+  - {fileID: 8300000, guid: c36b9b0c7833d7c41b7ce234c2ae7c80, type: 3}
+  - {fileID: 8300000, guid: fbbda789d3db5f148b3e44f54d4777f3, type: 3}
   fireSelectorInput:
     actionPath: /actions/VArmory/in/B
     needsReinit: 0
@@ -1172,8 +1229,16 @@ MonoBehaviour:
   fxIndex: 0
   soundFadeTime: 0.5
   soundDelayTime: 0.1
-  actionBackSounds: []
-  actionFowardSounds: []
+  actionBackSounds:
+  - {fileID: 8300000, guid: 44c1900a3f9e2174fab8b5a9780af3c3, type: 3}
+  - {fileID: 8300000, guid: 7caa08694f24791479560e208a8612b0, type: 3}
+  - {fileID: 8300000, guid: b4fe8c289a08f1d41862f247167e9a1d, type: 3}
+  - {fileID: 8300000, guid: b2e37468b9ca3934f9923060874687e2, type: 3}
+  actionFowardSounds:
+  - {fileID: 8300000, guid: b62c2c09056109d47a26f5450d79269f, type: 3}
+  - {fileID: 8300000, guid: a280904aebb27574ebf94dea41a05b89, type: 3}
+  - {fileID: 8300000, guid: 18ea4854059b8ec4bb5144d1c95e66dc, type: 3}
+  - {fileID: 8300000, guid: 64e2accb9f98d9c4d92b4b7d33941085, type: 3}
   fireSounds:
   - {fileID: 8300000, guid: a9e2528162bde7948b141235a74603ae, type: 3}
   - {fileID: 8300000, guid: 7de20aae03952a24b82605b04e3efbab, type: 3}
@@ -1184,9 +1249,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4b0061d57b7503f4c8a09a7a5805ef67, type: 3}
   - {fileID: 8300000, guid: 3ba25333f6134ab4784715d5617eb4f0, type: 3}
   suppressedFireSounds: []
-  dryFireSounds: []
-  loadMagazineSounds: []
-  unloadMagazineSounds: []
+  dryFireSounds:
+  - {fileID: 8300000, guid: 3810f0cb7bf451a428b7d5d04403d6e2, type: 3}
+  - {fileID: 8300000, guid: 14014f2313dc54949a708e174c2d3b38, type: 3}
+  - {fileID: 8300000, guid: 21d14d37360e7964dbb7ccbc081ce228, type: 3}
+  loadMagazineSounds:
+  - {fileID: 8300000, guid: 4814dd96f2fd16b43b18a42d09436673, type: 3}
+  - {fileID: 8300000, guid: 4770c178e7373304c95dd3e6aaf4f663, type: 3}
+  - {fileID: 8300000, guid: a41e51e0b69e439448000bf72a646d0e, type: 3}
+  - {fileID: 8300000, guid: 1cabfc97a68c5bd49994f5f00c6e1a2a, type: 3}
+  - {fileID: 8300000, guid: 856e398f642b6df4b82de4608dace245, type: 3}
+  unloadMagazineSounds:
+  - {fileID: 8300000, guid: 366dd455022982448bc4cde7b6ee84ea, type: 3}
+  - {fileID: 8300000, guid: db04c8135d1b78d4bac26a9e06461968, type: 3}
+  - {fileID: 8300000, guid: d8e72eb5b6496d34dab8c169fad4d284, type: 3}
+  - {fileID: 8300000, guid: d78b6825ecb335149b09c7ff399c81d9, type: 3}
+  - {fileID: 8300000, guid: f7ceda0cbdfdceb40af92a652dc6ae5a, type: 3}
   restOnSlideStopSounds: []
 --- !u!1 &604705630308811691
 GameObject:
@@ -1465,6 +1543,7 @@ GameObject:
   - component: {fileID: 604705630997215988}
   - component: {fileID: 604705630997215991}
   - component: {fileID: 604705630997215990}
+  - component: {fileID: 7676293221493313852}
   m_Layer: 0
   m_Name: Highlight M4
   m_TagString: Untagged
@@ -1533,6 +1612,58 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &7676293221493313852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604705630997215753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe91dc294731a9428c0941ea7579110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawingMode: 1
+  outlineLayer: 0
+  outlineTargets:
+  - edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    Renderer: {fileID: 604705630997215990}
+    SubmeshIndex: 0
+    ForceRecalculateBounds: 0
+    CutoutDescriptionType: 0
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  renderStyle: 1
+  outlineParameters:
+    enabled: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
+  backParameters:
+    enabled: 1
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
+  frontParameters:
+    enabled: 1
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
 --- !u!1 &604705631062079462
 GameObject:
   m_ObjectHideFlags: 0
