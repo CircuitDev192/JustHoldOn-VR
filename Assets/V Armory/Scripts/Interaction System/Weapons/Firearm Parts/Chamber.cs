@@ -182,6 +182,8 @@ namespace VArmory
             bullet.Rb.maxAngularVelocity = ejectTorque;
             bullet.Rb.AddTorque(ReturnAxis(torqueDirection, eject) * ejectTorque, ForceMode.VelocityChange);
 
+            bullet.gameObject.layer = 0;
+
             bullet.chambered = false;
 
             if (bullet.Spent)
