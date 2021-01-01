@@ -760,8 +760,8 @@ MonoBehaviour:
   rb: {fileID: 604705630124791360}
   colliders: []
   velocityHistory:
-    velocitySampleSize: 3
-    releaseForceMultiplier: 1
+    velocitySampleSize: 5
+    releaseForceMultiplier: 2
     releaseAngularForceMultiplier: 1
   primaryGrip: {fileID: 604705630124791362}
   secondaryGrip: {fileID: 604705629941746340}
