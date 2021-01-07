@@ -1429,7 +1429,11 @@ MonoBehaviour:
   fireSelectorRotations: []
   safetySlideLimit: -1
   touchpadDirection: 6
-  switchFireModeSounds: []
+  switchFireModeSounds:
+  - {fileID: 8300000, guid: 8d29098e54a149643968b33cdc637644, type: 3}
+  - {fileID: 8300000, guid: 3b5c15ae78a272a46b2766182a1fa0af, type: 3}
+  - {fileID: 8300000, guid: e36c9eb71ea78fd45a570d4cd59571c4, type: 3}
+  - {fileID: 8300000, guid: e435ea3ad4e1a2b4fa17fe6c73cd61de, type: 3}
   fireSelectorInput:
     actionPath: /actions/VArmory/in/B
     needsReinit: 0
@@ -1733,8 +1737,16 @@ MonoBehaviour:
   fxIndex: 0
   soundFadeTime: 0.5
   soundDelayTime: 0.1
-  actionBackSounds: []
-  actionFowardSounds: []
+  actionBackSounds:
+  - {fileID: 8300000, guid: 07d94b693fca722428d5e1918cd69f97, type: 3}
+  - {fileID: 8300000, guid: 99c96728534f4844d98d96658034bf40, type: 3}
+  - {fileID: 8300000, guid: e62877651e1e7c34eb57cf7a47ed462e, type: 3}
+  - {fileID: 8300000, guid: aa10e2f755d7eb844806f025ddb768d0, type: 3}
+  actionFowardSounds:
+  - {fileID: 8300000, guid: 0ff374014d497c546ac11f0f50e1c566, type: 3}
+  - {fileID: 8300000, guid: ce8263cb07b6b6948bb362cd5f03609f, type: 3}
+  - {fileID: 8300000, guid: ec053eb969858a844a43654093577783, type: 3}
+  - {fileID: 8300000, guid: 062391752dd378c43be3578490c515ad, type: 3}
   fireSounds:
   - {fileID: 8300000, guid: 101a2d572f0e92a438025a65052d4c3c, type: 3}
   - {fileID: 8300000, guid: 1da14e1031244be4e8ea2c87abf1c98b, type: 3}
@@ -1743,9 +1755,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: df28e902af4152d46acf2aaeeafad7ed, type: 3}
   - {fileID: 8300000, guid: fdb023de6ecea8241bb2e1ee720a6b16, type: 3}
   suppressedFireSounds: []
-  dryFireSounds: []
-  loadMagazineSounds: []
-  unloadMagazineSounds: []
+  dryFireSounds:
+  - {fileID: 8300000, guid: 5538c2ee270df8e469c7f70e29a3e326, type: 3}
+  - {fileID: 8300000, guid: c38713afaabf2b041afe0da7f41b29e0, type: 3}
+  - {fileID: 8300000, guid: 9bbc534298981e341bc761d23ef262ee, type: 3}
+  loadMagazineSounds:
+  - {fileID: 8300000, guid: 8cd60fc0abdf1a44fa7da2ebcac23858, type: 3}
+  - {fileID: 8300000, guid: 74b025bc524dd704cb4a103c0085db73, type: 3}
+  - {fileID: 8300000, guid: ef3f2756b1ff3cd41bf4de023006b1de, type: 3}
+  - {fileID: 8300000, guid: 72ac2f1a84b02e54a85255bc60728eac, type: 3}
+  unloadMagazineSounds:
+  - {fileID: 8300000, guid: 31a6e3be66da5464590ba3714f216f84, type: 3}
+  - {fileID: 8300000, guid: 3bd2f96dcda70a641a3dc0e8c30d338b, type: 3}
+  - {fileID: 8300000, guid: 78b86c84722d4ec46905d5a223c4f0d5, type: 3}
+  - {fileID: 8300000, guid: 4ad5f878a50d1c040b9c75d438c89f23, type: 3}
   restOnSlideStopSounds: []
 --- !u!1 &7526120979390801757
 GameObject:

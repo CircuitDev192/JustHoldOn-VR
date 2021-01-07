@@ -250,8 +250,14 @@ MonoBehaviour:
   flipOffsetInput:
     actionPath: 
     needsReinit: 0
-  loadBulletSound: []
-  ejectBulletSound: []
+  loadBulletSound:
+  - {fileID: 8300000, guid: 8c0d9a5ed12ff0c4c9ad5652e6000f0b, type: 3}
+  - {fileID: 8300000, guid: dacbaefd168b62944834cd6f8457921f, type: 3}
+  - {fileID: 8300000, guid: cc5304929b36b384caef40c39a749e8c, type: 3}
+  ejectBulletSound:
+  - {fileID: 8300000, guid: 111681cb4acb3524694feb1934a7dce3, type: 3}
+  - {fileID: 8300000, guid: 1f2932b18bc5de14f8db44f135ddc108, type: 3}
+  - {fileID: 8300000, guid: 85e32674d5685324ba3957f1f4a13b22, type: 3}
   eject: {fileID: 8078564134437748775}
   bullets:
   - {fileID: 8088807390797738845}
