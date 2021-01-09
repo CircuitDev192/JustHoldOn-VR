@@ -29,12 +29,13 @@ public class PlayerManager : MonoBehaviour
 
     private void PlayerKilled()
     {
-        //what to do when player dies
+       //This should probably handle stuff like what actually happens to the player upon death.
+       // Allow the Game Manager to do scene and menu stuff on death instead.
     }
 
-    private void PlayerHealthChanged(float healthDelta)
+    private void PlayerHealthChanged(float health)
     {
-        playerHealth += healthDelta;
+        playerHealth = health;
     }
 
     private void OnDestroy()

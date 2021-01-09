@@ -9,6 +9,11 @@ public class MeleeWeapon : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     private float impactForce;
 
+    private Vector3 oldPos;
+    private Vector3 newPos;
+    private Vector3 velocityVector;
+    private float velocityMagnitude;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +21,28 @@ public class MeleeWeapon : MonoBehaviour
         {
             Debug.LogError("Melee Weapon Blade Collider Missing.");
         }
+
+        oldPos = transform.position;
+    }
+
+    private void FixedUpdate()
+    {
+        //Grab velocity vector based on world position each phys update,
+        // since Unity doesn't do this for kinematic rigidbodies
+        newPos = transform.position;
+        velocityVector = (newPos - oldPos);
+        velocityMagnitude = (velocityVector / Time.deltaTime).magnitude;
+        oldPos = newPos;
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        impactForce = rb.velocity.magnitude;
-
         IDamageAble damageAble = col.gameObject.GetComponentInParent<IDamageAble>();
 
-        if (damageAble != null)
+        if (damageAble != null && velocityMagnitude >= 3.5f)
         {
             damageAble.Damage(baseDamage, col.gameObject.name);
-            col.GetComponent<Rigidbody>().AddForce((bladeCollider.ClosestPointOnBounds(col.transform.position) - col.transform.position) * impactForce, ForceMode.Impulse);
+            col.GetComponent<Rigidbody>().AddForce((bladeCollider.ClosestPointOnBounds(col.transform.position) - col.transform.position) * velocityMagnitude, ForceMode.Impulse);
         }
     }
 }
