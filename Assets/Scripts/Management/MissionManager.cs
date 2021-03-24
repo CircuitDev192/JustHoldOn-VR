@@ -116,10 +116,12 @@ public class MissionManager : MonoBehaviour
 
     IEnumerator WaitForPlayerToTalk()
     {
-        while (!Input.GetKeyDown(KeyCode.E))
+        /*while (!Input.GetKeyDown(KeyCode.E))
         {
             yield return null;
         }
+        */
+        yield return new WaitForSeconds(1f);
         PlayerSpokeToMissionGiver();
     }
 
