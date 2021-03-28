@@ -19,22 +19,16 @@ public class MissionManager : MonoBehaviour
         EventManager.PlayerAtMissionGiver += PlayerAtMissionGiver;
         EventManager.PlayerLeftMissionGiver += PlayerLeftMissionGiver;
         EventManager.InstantiateNextMission += InstantiateNextMission;
-        EventManager.PlayerEnteredMissionVehicle += PlayerEnteredMissionVehicle;
 
-        MissionData data = SaveManager.LoadMissionIndex();
-        if (data != null)
-        {
-            currentMission = data.currentMissionIndex;
-        }
-        else
-        {
-            Debug.LogError("Mission Manager did not receive mission data from save file.");
-        }
-    }
-
-    private void PlayerEnteredMissionVehicle()
-    {
-        PlayerManager.instance.player.SetActive(false);
+        //MissionData data = SaveManager.LoadMissionIndex();
+        //if (data != null)
+        //{
+        //    currentMission = data.currentMissionIndex;
+        //}
+       // else
+        ////{
+        //    Debug.LogError("Mission Manager did not receive mission data from save file.");
+        //}
     }
 
     private void InstantiateNextMission()
@@ -96,11 +90,6 @@ public class MissionManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     IEnumerator StartNextMission()
     {
@@ -131,6 +120,5 @@ public class MissionManager : MonoBehaviour
         EventManager.PlayerAtMissionGiver -= PlayerAtMissionGiver;
         EventManager.PlayerLeftMissionGiver -= PlayerLeftMissionGiver;
         EventManager.InstantiateNextMission -= InstantiateNextMission;
-        EventManager.PlayerEnteredMissionVehicle -= PlayerEnteredMissionVehicle;
     }
 }

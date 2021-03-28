@@ -9,7 +9,7 @@ public class ZombieChargeState : ZombieBaseState
         context.livingDespawnDistance = 300f;
         context.deadDespawnDistance = 60f;
         context.zombieNavMeshAgent.enabled = true;
-        context.zombieNavMeshAgent.speed = context.walkSpeed;
+        context.zombieNavMeshAgent.speed = context.runSpeed/2f;
         context.currentTarget = context.chargeTransform.position + new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f));
         context.zombieNavMeshAgent.destination = context.currentTarget;
 

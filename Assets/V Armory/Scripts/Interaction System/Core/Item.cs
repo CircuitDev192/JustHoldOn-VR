@@ -204,11 +204,13 @@ namespace VArmory
                 onAttach.isTrigger = false;
                 onAttach.parent = true;
 
+                /*
                 onDetach.isKinematic = false;
                 onDetach.useGravity = true;
                 onDetach.colliderEnabled = true;
                 onDetach.isTrigger = false;
                 onDetach.parent = false;
+                */
             }
 
             if (VelocityPoseType())
