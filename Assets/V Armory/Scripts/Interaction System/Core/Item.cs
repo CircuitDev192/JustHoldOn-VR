@@ -1018,6 +1018,12 @@ namespace VArmory
                         transform.rotation = Quaternion.Lerp(transform.rotation,
                                                                 Quaternion.LookRotation(forward, Vector3.up) * Quaternion.Euler(twoHandRotationOffset), //rotationOffset
                                                                 setRotationCurve.Evaluate((Time.time - rotationGrabTime) * setTwoHandRotationSpeed));
+
+                        /*
+                        transform.rotation.eulerAngles.Set(Mathf.Clamp(transform.rotation.eulerAngles.x, -179f, 179f), 
+                                                            Mathf.Clamp(transform.rotation.eulerAngles.y, -179f, 179f), 
+                                                            transform.rotation.eulerAngles.z);
+                        */
                     }
                     else if (PrimaryHand) 
                     {
