@@ -146,11 +146,13 @@ namespace VArmory
 
             recoilManager.ApplyRecoil();
 
+            
             if (!PrimaryHand)
             {
                 if(isMountedWeapon) staticPosScript.ResetPos();
                 return;
             }
+            
 
             if (trigger) trigger.PoseTrigger(PrimaryHand.TriggerRotation);
 
