@@ -89,15 +89,18 @@ public class UIWaypointController : MonoBehaviour
         //{
         ToggleUI(true);
 
-        Vector3 playerLook = new Vector3(0, cam.transform.eulerAngles.y, 0);
-        Debug.LogError("playerlook: " + playerLook);
-        Vector3 playerToObjective = new Vector3(0, (target - cam.transform.position).y, 0);
-        Debug.LogError("playertoObj: " + playerToObjective);
-        float sign = (playerToObjective.y < playerLook.y) ? -1.0f : 1.0f;
-        Debug.LogError("sign: " + sign);
-        float zAngle = Vector3.Angle(playerToObjective, playerLook) * sign;
-        Debug.LogError("zangle: " + zAngle);
-        rectTransform.eulerAngles = new Vector3(180, 0, zAngle);
+        float playerLook = cam.transform.eulerAngles.y % 360;
+
+        Vector3 playerToObjective = target - cam.transform.position;
+        Vector3 normalizedDirToObj = new Vector3(playerToObjective.x, 0, playerToObjective.z).normalized;
+
+        float sign = (playerToObjective.x < 0) ? -1.0f : 1.0f;
+
+        float angle = Vector3.Angle(Vector3.forward, normalizedDirToObj);
+
+        float zAngle = ((angle * sign) - playerLook) % 360;
+
+        rectTransform.localEulerAngles = new Vector3(180, 0, zAngle);
         //}
     }
 
