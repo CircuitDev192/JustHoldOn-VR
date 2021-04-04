@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -85,21 +84,13 @@ public class GameManager : Context<GameManager>
     private void PlayerKilled()
     {
         //Player manager also listens to this event to play death music
-        cam.transform.parent = null;
-        StartCoroutine(MoveCamera()); //Will reload the scene when the move is complete
+        Time.timeScale = 0.5f;
+        StartCoroutine(WaitToReloadLevel()); //Will reload the scene 
     }
 
-    IEnumerator MoveCamera()
+    IEnumerator WaitToReloadLevel()
     {
-        float timer = 4f;
-        while(timer >= 0)
-        {
-            timer -= Time.deltaTime;
-            cam.transform.LookAt(player.transform);
-            cam.transform.Translate(new Vector3(0, 0.5f, -1f) * 2f * Time.deltaTime, Space.World);
-            yield return null;
-        }
-        yield return new WaitForSeconds(5.5f);
+        yield return new WaitForSeconds(7.5f);
         LoadSceneSynchronous("Game");
     }
 
