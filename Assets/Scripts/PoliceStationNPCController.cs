@@ -128,17 +128,22 @@ public class PoliceStationNPCController : MonoBehaviour, IDamageAble
 
     public void Damage(float damage, string limbName)
     {
-        StopAllCoroutines();
-        killed = true;
-        animator.enabled = false;
-        navMeshAgent.enabled = false;
-
-        Rigidbody[] rigidBodies = this.GetComponentsInChildren<Rigidbody>();
-
-        foreach (Rigidbody rigidBody in rigidBodies)
+        if (!killed)
         {
-            rigidBody.isKinematic = false;
-            rigidBody.useGravity = true;
+            killed = true;
+            StopAllCoroutines();
+            floatingText.GetComponentInChildren<TextMesh>().text = "";
+            EventManager.TriggerNPCKilled();
+            animator.enabled = false;
+            navMeshAgent.enabled = false;
+
+            Rigidbody[] rigidBodies = this.GetComponentsInChildren<Rigidbody>();
+
+            foreach (Rigidbody rigidBody in rigidBodies)
+            {
+                rigidBody.isKinematic = false;
+                rigidBody.useGravity = true;
+            }
         }
     }
 }

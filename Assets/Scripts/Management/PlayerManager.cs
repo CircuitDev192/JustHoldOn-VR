@@ -15,8 +15,10 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private AudioClip flashbangEarRinging;
     [SerializeField] private AudioClip lastMissionMusic;
     [SerializeField] private AudioClip deathMusic;
+    [SerializeField] private AudioClip killedNPCMusic;
     [SerializeField] public float soundMultiplier = 1f;
     private bool isInLastMission = false;
+    private bool failState = false;
 
     #endregion
 
@@ -29,6 +31,7 @@ public class PlayerManager : MonoBehaviour
     {
         EventManager.PlayerHealthChanged += PlayerHealthChanged;
         EventManager.PlayerKilled += PlayerKilled;
+        EventManager.NPCKilled += NPCKilled;
         EventManager.PlayerEnteredMissionVehicle += PlayerEnteredMissionVehicle;
         EventManager.FlashbangDetonated += FlashbangDetonated;
     }
@@ -37,9 +40,21 @@ public class PlayerManager : MonoBehaviour
     {
         //This should probably handle stuff like what actually happens to the player upon death.
         // Allow the Game Manager to do scene and menu stuff on death instead.
-        if (!isInLastMission)
+        if (!isInLastMission && !failState)
         {
+            failState = true;
             audioSource.PlayOneShot(deathMusic);
+        }
+    }
+
+    private void NPCKilled()
+    {
+        //Same as player killed but may need additional functions for NPC death
+        //  so making a seperate event
+        if (!isInLastMission && !failState)
+        {
+            failState = true;
+            audioSource.PlayOneShot(killedNPCMusic);
         }
     }
 
@@ -79,6 +94,7 @@ public class PlayerManager : MonoBehaviour
     {
         EventManager.PlayerHealthChanged -= PlayerHealthChanged;
         EventManager.PlayerKilled -= PlayerKilled;
+        EventManager.NPCKilled -= NPCKilled;
         EventManager.PlayerEnteredMissionVehicle -= PlayerEnteredMissionVehicle;
         EventManager.FlashbangDetonated -= FlashbangDetonated;
     }

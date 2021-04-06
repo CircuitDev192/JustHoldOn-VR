@@ -180,6 +180,10 @@ public static class EventManager
     public static Action PlayerKilled;
     public static void TriggerPlayerKilled() { PlayerKilled?.Invoke(); }
 
+    // NPC killed event
+    public static Action NPCKilled;
+    public static void TriggerNPCKilled() { NPCKilled?.Invoke(); }
+
     // Flashbang Detonated
     public static Action<Vector3, float> FlashbangDetonated;
     public static void TriggerFlashbangDetonated(Vector3 flashbangPosition, float stunDistance) { FlashbangDetonated?.Invoke(flashbangPosition, stunDistance); }

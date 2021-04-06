@@ -38,11 +38,12 @@ public class MeleeWeapon : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         IDamageAble damageAble = col.gameObject.GetComponentInParent<IDamageAble>();
+        Rigidbody hitRb = col.gameObject.GetComponent<Rigidbody>();
 
         if (damageAble != null && velocityMagnitude >= 3.5f)
         {
             damageAble.Damage(baseDamage, col.gameObject.name);
-            col.GetComponent<Rigidbody>().AddForce((bladeCollider.ClosestPointOnBounds(col.transform.position) - col.transform.position) * velocityMagnitude, ForceMode.Impulse);
+            if (hitRb) hitRb.AddForce((bladeCollider.ClosestPointOnBounds(col.transform.position) - col.transform.position) * velocityMagnitude, ForceMode.Impulse);
         }
     }
 }

@@ -57,10 +57,15 @@ public class GameManager : Context<GameManager>
         EventManager.UIQuitClicked += UIQuitClicked;
         EventManager.GameEnded += GameEnded;
         EventManager.PlayerKilled += PlayerKilled;
+        EventManager.NPCKilled += NPCKilled;
     }
 
     private void Start()
     {
+        if (!instance)
+        {
+            instance = this;
+        }
         player = PlayerManager.instance.player;
         cam = Camera.main;
     }
@@ -84,7 +89,14 @@ public class GameManager : Context<GameManager>
     private void PlayerKilled()
     {
         //Player manager also listens to this event to play death music
-        Time.timeScale = 0.5f;
+        //Time.timeScale = 0.5f;
+        StartCoroutine(WaitToReloadLevel()); //Will reload the scene 
+    }
+
+    private void NPCKilled()
+    {
+        //Player manager also listens to this event to play death music
+        //Time.timeScale = 0.5f;
         StartCoroutine(WaitToReloadLevel()); //Will reload the scene 
     }
 
@@ -156,5 +168,6 @@ public class GameManager : Context<GameManager>
         EventManager.UIQuitClicked -= UIQuitClicked;
         EventManager.GameEnded -= GameEnded;
         EventManager.PlayerKilled -= PlayerKilled;
+        EventManager.NPCKilled -= NPCKilled;
     }
 }
