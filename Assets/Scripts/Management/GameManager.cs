@@ -102,8 +102,23 @@ public class GameManager : Context<GameManager>
 
     IEnumerator WaitToReloadLevel()
     {
-        yield return new WaitForSeconds(7.5f);
-        LoadSceneSynchronous("Game");
+        yield return new WaitForSeconds(14f);
+        SceneManager.LoadScene("Loading", LoadSceneMode.Single);
+
+        /*
+        yield return new WaitForSeconds(1f);
+        AsyncOperation loadOp = SceneManager.LoadSceneAsync("Loading", LoadSceneMode.Additive);
+        loadOp.allowSceneActivation = false;
+        yield return new WaitForSeconds(9f);
+        while (!loadOp.isDone)
+        {
+            if (loadOp.progress >= 0.9f)
+            {
+                loadOp.allowSceneActivation = true;
+            }
+            yield return null;
+        }
+        */
     }
 
     #region Scene Methods
