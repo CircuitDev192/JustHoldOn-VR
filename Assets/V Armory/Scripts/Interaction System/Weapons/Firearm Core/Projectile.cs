@@ -114,12 +114,11 @@ namespace VArmory
             for (int i = 0; i < impactEffects.Count; i++)
             {
                 BulletImpactEffect impactEffect = impactEffects[i];
-
                 if (col.gameObject.CompareTag(impactEffect.hitObjectTag))
                 {
                     GameObject clone = null;
                     GameObject particleEffect = ENTEREXIT ? impactEffect.impactParticle : impactEffect.exitParticle;
-                    //AudioClip audioEffect = ENTEREXIT ? impactEffect.impactAudio[Random.Range(0, impactEffect.impactAudio.Length - 1)] : impactEffect.exitAudio[Random.Range(0, impactEffect.exitAudio.Length - 1)];
+                    AudioClip audioEffect = ENTEREXIT ? impactEffect.impactAudio[Random.Range(0, impactEffect.impactAudio.Length - 1)] : impactEffect.exitAudio[Random.Range(0, impactEffect.exitAudio.Length - 1)];
 
                     if (particleEffect)
                     { 
@@ -139,8 +138,8 @@ namespace VArmory
                             }
                     }
 
-                    //if (audioEffect)
-                    //	AudioSource.PlayClipAtPoint(audioEffect, col.contacts[0].point);
+                    if (audioEffect)
+                    	AudioSource.PlayClipAtPoint(audioEffect, col.contacts[0].point);
                 }
             }
         }

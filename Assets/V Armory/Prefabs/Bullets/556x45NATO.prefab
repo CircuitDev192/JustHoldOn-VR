@@ -232,19 +232,86 @@ MonoBehaviour:
   destroyDelay: 0.1
   impactEffects:
   - hitObjectTag: zombie
-    impactParticle: {fileID: 1562107803574844, guid: 9d9c2294151cd2047a53859cd226fd8b,
+    impactParticle: {fileID: 2892289106688674239, guid: 8a3ea20717c8ca04080a7d868f6e5fff,
       type: 3}
-    impactAudio: []
-    exitParticle: {fileID: 1562107803574844, guid: 9d9c2294151cd2047a53859cd226fd8b,
+    impactAudio:
+    - {fileID: 8300000, guid: 0a1b18470c280204d87e5fd850ae319b, type: 3}
+    - {fileID: 8300000, guid: 79cdd9582c2fe9c4e853a9d88e3956bb, type: 3}
+    - {fileID: 8300000, guid: ce381b651ce6c2b439ba07c1cf9a4bcd, type: 3}
+    - {fileID: 8300000, guid: 93ed11ea49a4d264d95b9a8263b4b65b, type: 3}
+    - {fileID: 8300000, guid: 21f2229ba98105d4b8ebbff54ca4d23d, type: 3}
+    exitParticle: {fileID: 2892289106688674239, guid: 8a3ea20717c8ca04080a7d868f6e5fff,
+      type: 3}
+    exitAudio:
+    - {fileID: 8300000, guid: c08bec9e8f694c146b1736be41e87e31, type: 3}
+    - {fileID: 8300000, guid: 60ab86c1273c2f547b5f0adac7c955d5, type: 3}
+    - {fileID: 8300000, guid: 15d65552e8caa554d8decd4dd0ec878f, type: 3}
+  - hitObjectTag: EnvMetal
+    impactParticle: {fileID: 4959502850054142828, guid: 10be5bd801d74c9438c4af806db4a606,
+      type: 3}
+    impactAudio:
+    - {fileID: 8300000, guid: b12de5c1bde06534bb8de31fee06caca, type: 3}
+    - {fileID: 8300000, guid: e572701045b0d7042a93c639b32606bd, type: 3}
+    - {fileID: 8300000, guid: e1267705401a2c54b90b79a82b9279ce, type: 3}
+    - {fileID: 8300000, guid: 04cb86abb189ac14fa239843fcc74131, type: 3}
+    - {fileID: 8300000, guid: 81adf628d03e3ba4d889a7f1edc61cbd, type: 3}
+    - {fileID: 8300000, guid: e33f2c5515343d4439fa2d89189e6dec, type: 3}
+    - {fileID: 8300000, guid: 25038fbbc4ed31649b611a10bfce4daa, type: 3}
+    - {fileID: 8300000, guid: 512fda25ba011f145bc4c8b3b38e3024, type: 3}
+    exitParticle: {fileID: 4959502850054142828, guid: 10be5bd801d74c9438c4af806db4a606,
       type: 3}
     exitAudio: []
-  - hitObjectTag: Environment
-    impactParticle: {fileID: 1562107803574844, guid: 9d9c2294151cd2047a53859cd226fd8b,
+  - hitObjectTag: EnvDirt
+    impactParticle: {fileID: 4959502850054142828, guid: 10be5bd801d74c9438c4af806db4a606,
       type: 3}
-    impactAudio: []
-    exitParticle: {fileID: 1562107803574844, guid: 9d9c2294151cd2047a53859cd226fd8b,
+    impactAudio:
+    - {fileID: 8300000, guid: cabf7dbea708a9c45a445e647e9639e1, type: 3}
+    - {fileID: 8300000, guid: 0d157e94fc0582d4bad97074839701d5, type: 3}
+    - {fileID: 8300000, guid: fb1885cef718bed4081308da5094e7e3, type: 3}
+    exitParticle: {fileID: 4959502850054142828, guid: 10be5bd801d74c9438c4af806db4a606,
       type: 3}
     exitAudio: []
+  - hitObjectTag: EnvGrass
+    impactParticle: {fileID: 4959502850054142828, guid: 10be5bd801d74c9438c4af806db4a606,
+      type: 3}
+    impactAudio:
+    - {fileID: 8300000, guid: 822915bb6d0370145ba422c45b475593, type: 3}
+    - {fileID: 8300000, guid: 5036ba2121ce30540af27da0dc2f28d0, type: 3}
+    - {fileID: 8300000, guid: 364b4d54a44698240819b037f51344b5, type: 3}
+    - {fileID: 8300000, guid: 73eb844f0778af44b983b1d90907a944, type: 3}
+    - {fileID: 8300000, guid: b96afa4e7f351084fab7a99591a721e5, type: 3}
+    - {fileID: 8300000, guid: f2be26c41c0180444b856bcde604fa5d, type: 3}
+    - {fileID: 8300000, guid: 710fccc8d33989c42b947d52b7841602, type: 3}
+    - {fileID: 8300000, guid: 921857f8d7065db4cbce183c2ee63cfc, type: 3}
+    exitParticle: {fileID: 4959502850054142828, guid: 10be5bd801d74c9438c4af806db4a606,
+      type: 3}
+    exitAudio: []
+  - hitObjectTag: EnvConcrete
+    impactParticle: {fileID: 4959502850054142828, guid: 10be5bd801d74c9438c4af806db4a606,
+      type: 3}
+    impactAudio:
+    - {fileID: 8300000, guid: 057da1f497801da48972adee01d942ba, type: 3}
+    - {fileID: 8300000, guid: fbcaeff1c64845141aa4b72ac114247d, type: 3}
+    - {fileID: 8300000, guid: e9ea9cac49f4cac4487ac4aa2351f3b3, type: 3}
+    - {fileID: 8300000, guid: eae8d3964ca779c46a35c32d35cf3fc1, type: 3}
+    exitParticle: {fileID: 4959502850054142828, guid: 10be5bd801d74c9438c4af806db4a606,
+      type: 3}
+    exitAudio: []
+  - hitObjectTag: NPC
+    impactParticle: {fileID: 2892289106688674239, guid: 8a3ea20717c8ca04080a7d868f6e5fff,
+      type: 3}
+    impactAudio:
+    - {fileID: 8300000, guid: 0a1b18470c280204d87e5fd850ae319b, type: 3}
+    - {fileID: 8300000, guid: 79cdd9582c2fe9c4e853a9d88e3956bb, type: 3}
+    - {fileID: 8300000, guid: ce381b651ce6c2b439ba07c1cf9a4bcd, type: 3}
+    - {fileID: 8300000, guid: 93ed11ea49a4d264d95b9a8263b4b65b, type: 3}
+    - {fileID: 8300000, guid: 21f2229ba98105d4b8ebbff54ca4d23d, type: 3}
+    exitParticle: {fileID: 2892289106688674239, guid: 8a3ea20717c8ca04080a7d868f6e5fff,
+      type: 3}
+    exitAudio:
+    - {fileID: 8300000, guid: c08bec9e8f694c146b1736be41e87e31, type: 3}
+    - {fileID: 8300000, guid: 15d65552e8caa554d8decd4dd0ec878f, type: 3}
+    - {fileID: 8300000, guid: 60ab86c1273c2f547b5f0adac7c955d5, type: 3}
 --- !u!1 &1854711544463380
 GameObject:
   m_ObjectHideFlags: 0

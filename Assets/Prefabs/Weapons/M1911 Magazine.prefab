@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1920481634910145774}
   m_LocalRotation: {x: -0.17948909, y: 0, z: 0, w: 0.98376}
   m_LocalPosition: {x: 0.000000005654196, y: -0.05186476, z: 0.04769017}
-  m_LocalScale: {x: 0.99999994, y: 1.0000002, z: 0.9999995}
+  m_LocalScale: {x: 1, y: 1.0000002, z: 1}
   m_Children:
   - {fileID: 8078564134437748775}
   - {fileID: 2167564637528588218}
@@ -182,8 +182,8 @@ MonoBehaviour:
     colliderEnabled: 1
     isTrigger: 0
     parent: 0
-  positionOffset: {x: 0, y: 0.091602616, z: -0.03133973}
-  rotationOffset: {x: -0.0000034150946, y: 180, z: -4.4071056e-14}
+  positionOffset: {x: 0, y: 0.13088822, z: -0.008757668}
+  rotationOffset: {x: 340, y: 180, z: 0}
   flippedPositionOffset: {x: 0, y: 0, z: 0}
   flippedRotationOffset: {x: 0, y: 0, z: 0}
   twoHandRotationOffset: {x: 0, y: 0, z: 0}
@@ -267,6 +267,7 @@ MonoBehaviour:
   swipeToEjectDistance: 0.25
   maxRounds: 7
   currentRounds: 7
+  infiniteAmmo: 0
   weightOfEmptyMag: 0.05
   requireHeldBullets: 1
   ejectBulletInput:
@@ -406,7 +407,7 @@ MonoBehaviour:
     CutoutDescriptionType: 0
     CutoutThreshold: 0.5
     CullMode: 2
-    cutoutTextureName: 
+    cutoutTextureName: _BaseMap
     DilateRenderingMode: 0
     cutoutTextureIndex: 0
   renderStyle: 1
@@ -417,7 +418,13 @@ MonoBehaviour:
     blurShift: 1
     fillPass:
       shader: {fileID: 0}
-      serializedProperties: []
+      serializedProperties:
+      - PropertyName: _PublicColor
+        Property:
+          ColorValue: {r: 1, g: 0, b: 0, a: 0.2}
+          FloatValue: 0
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 0
   backParameters:
     enabled: 1
     color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
