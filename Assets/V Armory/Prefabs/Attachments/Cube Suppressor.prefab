@@ -99,7 +99,7 @@ MonoBehaviour:
   onAttach:
     isKinematic: 1
     useGravity: 0
-    colliderEnabled: 0
+    colliderEnabled: 1
     isTrigger: 0
     parent: 1
   onDetach:

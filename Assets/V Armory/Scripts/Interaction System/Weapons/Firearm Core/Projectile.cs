@@ -58,10 +58,17 @@ namespace VArmory
 
             IDamageAble damageAble = col.gameObject.GetComponentInParent<IDamageAble>();
 
+            MainMenuObject menuObject = col.gameObject.GetComponentInParent<MainMenuObject>();
+
             if (damageAble != null)
             {
                 damageAble.Damage(baseDamage, col.gameObject.name);
                 col.rigidbody.AddForce(-col.contacts[0].normal * impactForce, ForceMode.Impulse);
+            }
+
+            if (menuObject != null)
+            {
+                menuObject.Hit();
             }
 
             if (explosive) explosive.enabled = true;
