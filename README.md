@@ -7,34 +7,43 @@ Current controls with latest Playable Build
 Built for Index/Oculus controllers:
 Vive support soon.
 
-=Left joystick
+#### Left joystick
+Move
 
-==Move
+------------
 
-=Right joystick
 
-==Turn
+#### Right joystick
+Turn
 
-=Right touchpad
+------------
 
-==Click down to drop magazine and cook grenade (Index Only for now)
 
-=B
+#### Right touchpad
+Click down to drop magazine and cook grenade (Index Only for now)
 
-==Change fire mode
+------------
 
-=A
 
-==Release slide catch
+#### B
+Change fire mode
 
-=Trigger
+------------
 
-==Fire weapons
 
-==Pull pin on grenade
+#### A
+Release slide catch
 
-=Grip
+------------
 
-==Pick up items
 
-==Interact with magazines, attachments, and slides
+#### Trigger
+Fire weapons
+Pull pin on grenade
+
+------------
+
+
+#### Grip
+Pick up items
+Interact with magazines, attachments, and slides
