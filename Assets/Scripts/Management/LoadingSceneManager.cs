@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadingSceneManager : MonoBehaviour
 {
+    [SerializeField] private string sceneToLoad;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,18 @@ public class LoadingSceneManager : MonoBehaviour
     {
         yield return null;
 
-        AsyncOperation loadOp = SceneManager.LoadSceneAsync("Game");
+        AsyncOperation loadOp;
+
+        if (sceneToLoad == "")
+        {
+            loadOp = SceneManager.LoadSceneAsync("Game");
+            Debug.LogError("LoadingSceneManager was not given a scene to load.");
+        }
+        else
+        {
+            loadOp = SceneManager.LoadSceneAsync(sceneToLoad);
+        }
+
         loadOp.allowSceneActivation = false;
         yield return new WaitForSeconds(5f);
 
