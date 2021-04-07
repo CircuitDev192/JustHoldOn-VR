@@ -2,28 +2,30 @@
  A VR adaptation of the Just Hold On and Epicenter IPs
 
 
-Current controls with latest Pre-Testing Build
+Current controls with latest Playable Build
 
-Built for Vive wands:
+Built for Index/Oculus controllers:
+Vive support soon.
 
-=Left touchpad
-==Touch to move
+=Left joystick
+==Move
+
+=Right joystick
+==Turn
 
 =Right touchpad
-==Click down to drop magazine and cook grenade
-==Click left to change fire mode
-==Click up to release slide catch
+==Click down to drop magazine and cook grenade (Index Only for now)
+
+=B
+==Change fire mode
+
+=A
+==Release slide catch
 
 =Trigger
-==Interact with item spawners on the demo table
 ==Fire weapons
 ==Pull pin on grenade
 
 =Grip
 ==Pick up items
-==Interact with restart box (to the right of the table)
 ==Interact with magazines, attachments, and slides
-
-There is no rotation options at this time. Physically turn to turn in game.
-
-Zombies can not hurt the player in this build. 
