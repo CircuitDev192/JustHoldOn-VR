@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -58,10 +57,15 @@ public class GameManager : Context<GameManager>
         EventManager.UIQuitClicked += UIQuitClicked;
         EventManager.GameEnded += GameEnded;
         EventManager.PlayerKilled += PlayerKilled;
+        EventManager.NPCKilled += NPCKilled;
     }
 
     private void Start()
     {
+        if (!instance)
+        {
+            instance = this;
+        }
         player = PlayerManager.instance.player;
         cam = Camera.main;
     }
@@ -85,22 +89,36 @@ public class GameManager : Context<GameManager>
     private void PlayerKilled()
     {
         //Player manager also listens to this event to play death music
-        cam.transform.parent = null;
-        StartCoroutine(MoveCamera()); //Will reload the scene when the move is complete
+        //Time.timeScale = 0.5f;
+        StartCoroutine(WaitToReloadLevel()); //Will reload the scene 
     }
 
-    IEnumerator MoveCamera()
+    private void NPCKilled()
     {
-        float timer = 4f;
-        while(timer >= 0)
+        //Player manager also listens to this event to play death music
+        //Time.timeScale = 0.5f;
+        StartCoroutine(WaitToReloadLevel()); //Will reload the scene 
+    }
+
+    IEnumerator WaitToReloadLevel()
+    {
+        yield return new WaitForSeconds(14f);
+        SceneManager.LoadScene("Loading", LoadSceneMode.Single);
+
+        /*
+        yield return new WaitForSeconds(1f);
+        AsyncOperation loadOp = SceneManager.LoadSceneAsync("Loading", LoadSceneMode.Additive);
+        loadOp.allowSceneActivation = false;
+        yield return new WaitForSeconds(9f);
+        while (!loadOp.isDone)
         {
-            timer -= Time.deltaTime;
-            cam.transform.LookAt(player.transform);
-            cam.transform.Translate(new Vector3(0, 0.5f, -1f) * 2f * Time.deltaTime, Space.World);
+            if (loadOp.progress >= 0.9f)
+            {
+                loadOp.allowSceneActivation = true;
+            }
             yield return null;
         }
-        yield return new WaitForSeconds(5.5f);
-        LoadSceneSynchronous("Game");
+        */
     }
 
     #region Scene Methods
@@ -165,5 +183,6 @@ public class GameManager : Context<GameManager>
         EventManager.UIQuitClicked -= UIQuitClicked;
         EventManager.GameEnded -= GameEnded;
         EventManager.PlayerKilled -= PlayerKilled;
+        EventManager.NPCKilled -= NPCKilled;
     }
 }

@@ -51,12 +51,6 @@ public class MissionSurvive : MonoBehaviour
         //Destroy(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator StartZombieCharge()
     {
         yield return new WaitForSeconds(2f);

@@ -23,6 +23,8 @@ namespace VArmory
 
         [SerializeField] protected int maxRounds;
         [SerializeField] protected int currentRounds;
+        [SerializeField] protected bool infiniteAmmo = false;
+        [SerializeField] protected float weightOfEmptyMag;
 
         [SerializeField] protected bool requireHeldBullets = true;
 
@@ -36,6 +38,27 @@ namespace VArmory
             set
             {
                 currentRounds = Mathf.Clamp(value, 0, maxRounds);
+
+                if(infiniteAmmo && currentRounds == 0)
+                {
+                    Bullet bullet = Instantiate(bulletClone, transform.position, transform.rotation);
+
+                    
+
+                    bullet.GetComponentInChildren<MeshRenderer>().enabled = false;
+                    bullet.Restrained = true;
+                    bullet.SetKinematic();
+                    bullet.Rb.useGravity = false;
+                    bullet.Col.enabled = false;
+
+                    savedBullets.Add(bullet);
+
+                    currentRounds += 1;
+                }
+
+                //Because socket slide removes the rb, this line can't work, as the rb is null. 
+                //Need to make rbs play nice so they dont have to be deleted. Then this can work.
+                //rb.mass = weightOfEmptyMag + ((savedBullets.Count > 0 ? savedBullets[0].rb.mass : 0) * currentRounds);
                 UpdateBulletRenderers();
             }
         }
@@ -46,6 +69,12 @@ namespace VArmory
         protected override void Start()
         {
             base.Start();
+
+            if (infiniteAmmo)
+            {
+                currentRounds = 1;
+                maxRounds = 1;
+            }
 
             if (eject == null)
                 if ((eject = transform.Find("Eject") ?? transform.Find("eject")) == null)
@@ -60,6 +89,9 @@ namespace VArmory
             while (savedBullets.Count < currentRounds)
             {
                 Bullet bullet = Instantiate(bulletClone, transform.position, transform.rotation);
+
+                //Clamp?
+                rb.mass += bullet.rb.mass;
 
                 bullet.GetComponentInChildren<MeshRenderer>().enabled = false;
                 bullet.Restrained = true;
@@ -213,7 +245,7 @@ namespace VArmory
             if (Restrained)
                 return;
 
-            if (other.gameObject.tag != "Interactable")
+            if (!other.gameObject.CompareTag("Interactable"))
                 return;
 
             Bullet tempBullet = other.GetComponent<Bullet>();

@@ -30,6 +30,13 @@ namespace VArmory
             armed = !armed;
         }
 
+        public virtual void Disarm()
+        {
+            //Primarily for the grenades
+            // to allow pin to be put back in.
+            armed = false;
+        }
+
         public virtual void DelayedArm()
         {
             StartCoroutine(DelayedArmRoutine(armDelay));

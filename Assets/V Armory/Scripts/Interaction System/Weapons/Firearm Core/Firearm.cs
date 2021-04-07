@@ -37,10 +37,17 @@ namespace VArmory
         public bool allowOffHandStabilization = false;
         public float offhandStabilizationDistance = 0f;
         public Hand[] hands;
+        [SerializeField] protected bool isMountedWeapon = false;
+        public StaticPosForHMG staticPosScript;
 
         protected override void Start()
         {
             base.Start();
+
+            if (isMountedWeapon)
+            {
+                staticPosScript = GetComponent<StaticPosForHMG>();
+            }
 
             recoilManager = GetComponent<RecoilManager>();
             recoilManager.SetSelf(this);
@@ -139,8 +146,13 @@ namespace VArmory
 
             recoilManager.ApplyRecoil();
 
+            
             if (!PrimaryHand)
+            {
+                if(isMountedWeapon) staticPosScript.ResetPos();
                 return;
+            }
+            
 
             if (trigger) trigger.PoseTrigger(PrimaryHand.TriggerRotation);
 
@@ -478,6 +490,7 @@ namespace VArmory
             Debug.Log("Succesfully chambered bullet");
 
             Bullet tempBullet = magazine.SavedBullets[magazine.SavedBullets.Count - 1];
+
             magazine.SavedBullets.Remove(tempBullet);
             magazine.CurrentRounds -= 1;
 

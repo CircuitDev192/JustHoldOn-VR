@@ -139,8 +139,9 @@ namespace VArmory
             bullet.SetPhysics(true, false, true, true);
 
             bullet.transform.SetParent(transform, true);
+            //Should add an offset here to allow bullet to be placed anywhere, not just the chamber transform....
             bullet.transform.localPosition = Vector3.zero;
-            bullet.transform.localEulerAngles = Vector3.zero;
+            bullet.transform.localEulerAngles = Vector3.zero + new Vector3(0f,180f,0f); //When offset is added, change this back to not have the new Vector3
 
             bullet.MeshRenderer.enabled = true;
 
@@ -180,6 +181,8 @@ namespace VArmory
             bullet.Rb.AddForce((ReturnAxis(ejectDirection, eject) * ejectForce) + additionalVelocity, ForceMode.Impulse);
             bullet.Rb.maxAngularVelocity = ejectTorque;
             bullet.Rb.AddTorque(ReturnAxis(torqueDirection, eject) * ejectTorque, ForceMode.VelocityChange);
+
+            bullet.gameObject.layer = 0;
 
             bullet.chambered = false;
 

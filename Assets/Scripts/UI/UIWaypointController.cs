@@ -9,6 +9,7 @@ public class UIWaypointController : MonoBehaviour
     private Image waypointIcon;
     private Text distanceText;
 
+    private RectTransform rectTransform;
     private Transform player;
     private Vector3 target;
     private Camera cam;
@@ -18,8 +19,10 @@ public class UIWaypointController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        target = Vector3.zero;
+        rectTransform = GetComponent<RectTransform>();
         waypointIcon = GetComponent<Image>();
-        distanceText = GetComponentInChildren<Text>();
+        distanceText = transform.parent.transform.GetComponentInChildren<Text>();
         player = PlayerManager.instance.player.transform;
         EventManager.MissionWaypointChanged += MissionWaypointChanged;
         EventManager.EndMission += EndMission;
@@ -56,7 +59,7 @@ public class UIWaypointController : MonoBehaviour
         {
             waypointEnabled = !waypointEnabled;
         }
-
+        
         if (waypointEnabled)
         {
             GetDistance();
@@ -76,17 +79,29 @@ public class UIWaypointController : MonoBehaviour
 
     void CheckOnScreen()
     {
-        float angle = Vector3.Dot((target - cam.transform.position).normalized, cam.transform.forward);
+        //float angle = Vector3.Dot((target - cam.transform.position).normalized, cam.transform.forward);
+        
+        //if (angle <= 0f)
+        //{
+        //    ToggleUI(false);
+        //}
+        //else
+        //{
+        ToggleUI(true);
 
-        if (angle <= 0f)
-        {
-            ToggleUI(false);
-        }
-        else
-        {
-            ToggleUI(true);
-            transform.position = cam.WorldToScreenPoint(target);
-        }
+        float playerLook = cam.transform.eulerAngles.y % 360;
+
+        Vector3 playerToObjective = target - cam.transform.position;
+        Vector3 normalizedDirToObj = new Vector3(playerToObjective.x, 0, playerToObjective.z).normalized;
+
+        float sign = (playerToObjective.x < 0) ? -1.0f : 1.0f;
+
+        float angle = Vector3.Angle(Vector3.forward, normalizedDirToObj);
+
+        float zAngle = ((angle * sign) - playerLook) % 360;
+
+        rectTransform.localEulerAngles = new Vector3(180, 0, zAngle);
+        //}
     }
 
     void ToggleUI(bool uiEnable)

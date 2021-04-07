@@ -28,6 +28,8 @@ namespace VArmory
         [SerializeField] protected bool destroyOnImpact = true;
         [SerializeField] protected float destroyDelay = 0.05f;
 
+        private Vector3 prevFrameVelocity;
+
         [System.Serializable]
         public struct BulletImpactEffect
         {
@@ -45,16 +47,28 @@ namespace VArmory
             Destroy(gameObject, 7.5f);
         }
 
+        private void FixedUpdate()
+        {
+            prevFrameVelocity = rb.velocity;
+        }
+
         void OnCollisionEnter(Collision col)
         {
             Effect(col, true);
 
             IDamageAble damageAble = col.gameObject.GetComponentInParent<IDamageAble>();
 
+            MainMenuObject menuObject = col.gameObject.GetComponentInParent<MainMenuObject>();
+
             if (damageAble != null)
             {
                 damageAble.Damage(baseDamage, col.gameObject.name);
                 col.rigidbody.AddForce(-col.contacts[0].normal * impactForce, ForceMode.Impulse);
+            }
+
+            if (menuObject != null)
+            {
+                menuObject.Hit();
             }
 
             if (explosive) explosive.enabled = true;
@@ -107,12 +121,11 @@ namespace VArmory
             for (int i = 0; i < impactEffects.Count; i++)
             {
                 BulletImpactEffect impactEffect = impactEffects[i];
-
                 if (col.gameObject.CompareTag(impactEffect.hitObjectTag))
                 {
                     GameObject clone = null;
                     GameObject particleEffect = ENTEREXIT ? impactEffect.impactParticle : impactEffect.exitParticle;
-                    //AudioClip audioEffect = ENTEREXIT ? impactEffect.impactAudio[Random.Range(0, impactEffect.impactAudio.Length - 1)] : impactEffect.exitAudio[Random.Range(0, impactEffect.exitAudio.Length - 1)];
+                    AudioClip audioEffect = ENTEREXIT ? impactEffect.impactAudio[Random.Range(0, impactEffect.impactAudio.Length - 1)] : impactEffect.exitAudio[Random.Range(0, impactEffect.exitAudio.Length - 1)];
 
                     if (particleEffect)
                     { 
@@ -132,8 +145,8 @@ namespace VArmory
                             }
                     }
 
-                    //if (audioEffect)
-                    //	AudioSource.PlayClipAtPoint(audioEffect, col.contacts[0].point);
+                    if (audioEffect)
+                    	AudioSource.PlayClipAtPoint(audioEffect, col.contacts[0].point);
                 }
             }
         }

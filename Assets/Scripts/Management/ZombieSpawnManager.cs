@@ -164,7 +164,8 @@ public class ZombieSpawnManager : MonoBehaviour
         GameObject missionZombie = Instantiate(zombiePrefabs[Random.Range(0, zombiePrefabs.Length)], spawnLoc, Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
         missionZombies.Add(missionZombie);
         EventManager.TriggerMissionZombieSpawned(missionZombie);
-        
+        //Just to be sure
+        Debug.LogWarning("Mission Zombie spawned.");
     }
 
     private void ZombieDied(GameObject zombie)

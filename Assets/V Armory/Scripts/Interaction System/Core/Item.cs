@@ -204,11 +204,13 @@ namespace VArmory
                 onAttach.isTrigger = false;
                 onAttach.parent = true;
 
+                /*
                 onDetach.isKinematic = false;
                 onDetach.useGravity = true;
                 onDetach.colliderEnabled = true;
                 onDetach.isTrigger = false;
                 onDetach.parent = false;
+                */
             }
 
             if (VelocityPoseType())
@@ -993,6 +995,43 @@ namespace VArmory
                     break;
 
                 case PoseType.TwoHandAlignedSecondaryStatic:
+
+                    if (PrimaryHand || Slot)
+                    {
+                        //Vector3 primaryPoint = gripOffset.parent.position;
+
+                        //gripOffset.localPosition = Vector3.Lerp(grabLocalPosition, Vector3.zero, setPositionCurve.Evaluate((Time.time - positionGrabTime) * setPositionSpeed));
+                        
+                    }
+
+                    if (primaryGrip && secondaryGrip)
+                        if (PrimaryHand && SecondaryHand)
+                            hasBothHands = true;
+
+                    if (hasBothHands)
+                    {
+                        Vector3 primaryPoint = ((PrimaryHand.transform.position + SecondaryHand.transform.position) * 0.5f);
+                        Vector3 secondaryPoint = PrimaryHand.StoredItem.physicsJoint.transform.position;
+
+                        Vector3 forward = (primaryPoint - secondaryPoint).normalized;
+
+                        transform.rotation = Quaternion.Lerp(transform.rotation,
+                                                                Quaternion.LookRotation(forward, Vector3.up) * Quaternion.Euler(twoHandRotationOffset), //rotationOffset
+                                                                setRotationCurve.Evaluate((Time.time - rotationGrabTime) * setTwoHandRotationSpeed));
+
+                        /*
+                        transform.rotation.eulerAngles.Set(Mathf.Clamp(transform.rotation.eulerAngles.x, -179f, 179f), 
+                                                            Mathf.Clamp(transform.rotation.eulerAngles.y, -179f, 179f), 
+                                                            transform.rotation.eulerAngles.z);
+                        */
+                    }
+                    else if (PrimaryHand) 
+                    {
+                        break;
+                        gripOffset.localRotation = Quaternion.Lerp(grabLocalRotation,
+                                                                    Quaternion.Inverse(Quaternion.Euler(RotationOffset)),
+                                                                    setRotationCurve.Evaluate((Time.time - rotationGrabTime) * setRotationSpeed));
+                    }
 
                     break;
 
