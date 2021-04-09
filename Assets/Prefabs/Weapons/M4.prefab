@@ -758,7 +758,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad872edaf5df304c816411bde9dcdb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags: []
+  tags:
+  - M4
   itemOffsetPressed: 0
   itemFlippedOffsetPressed: 0
   controller: {fileID: 0}

@@ -218,7 +218,7 @@ namespace VArmory
             {
                 if (headYRotation != -1)
                 {
-                    if (Mathf.Abs(headYRotation - head.rotation.eulerAngles.y) > 60 && tempDot < 0.95f)
+                    if (Mathf.Abs(headYRotation - head.rotation.eulerAngles.y) > 90 && tempDot < 0.95f)
                         headYRotation = head.rotation.eulerAngles.y;
 
                     body.rotation = Quaternion.Euler(0, headYRotation, 0);

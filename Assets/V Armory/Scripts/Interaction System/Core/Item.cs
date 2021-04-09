@@ -248,6 +248,20 @@ namespace VArmory
 
             public void Attach(Hand newHand) { primaryGrip.ForceStartInteraction(newHand); }
 
+
+        protected void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("EnvConcrete") ||
+                collision.gameObject.CompareTag("EnvMetal")    ||
+                collision.gameObject.CompareTag("EnvDirt")     ||
+                collision.gameObject.CompareTag("EnvGrass"))
+            {
+                float loudness = rb.mass * rb.velocity.magnitude;
+                EventManager.TriggerSoundGenerated(this.transform.position, Mathf.Clamp(5f * (loudness * 0.5f), 2f, 35f));
+            }
+        }
+
+
         protected virtual void PrimaryGrasp()
         {
             if (!PrimaryHand)
@@ -913,8 +927,20 @@ namespace VArmory
 
             if (poseSlot == null)
                 return;
-
+            
             Transform gripOffset = poseSlot.Offset;
+
+            if (poseSlot == slot)
+            {
+                gripOffset.localPosition = Vector3.Lerp(grabLocalPosition,
+                                                            slot.offsetPos,
+                                                            setRotationCurve.Evaluate((Time.time - positionGrabTime) * setPositionSpeed));
+
+                gripOffset.localRotation = Quaternion.Lerp(grabLocalRotation,
+                                                            slot.offsetRot,
+                                                            setRotationCurve.Evaluate((Time.time - rotationGrabTime) * setRotationSpeed));
+                return;
+            }
 
             bool hasBothHands = false;
 

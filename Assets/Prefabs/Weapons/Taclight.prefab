@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 972236808611047303}
   - component: {fileID: 1937434321629371419}
   - component: {fileID: 972236808611047301}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Taclight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 701cc1b5f71d68545949464b0b7ee26f, type: 3}
   - {fileID: 8300000, guid: 21161f87d98917f4eb0f356e0588f84f, type: 3}
   useAttachmentInput:
-    actionPath: /actions/VArmory/in/Grip
+    actionPath: /actions/VArmory/in/Trigger
     needsReinit: 0
   type: 0
   AttachmentPosOffset: {x: 0, y: 0.025, z: 0.0385}

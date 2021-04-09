@@ -21,7 +21,7 @@ namespace VArmory
         protected override void Start()
         {
             base.Start();
-            primaryGrip._StartInteraction += Use;
+            //primaryGrip._StartInteraction += Use;
         }
 
         protected override void Update()

@@ -73,6 +73,8 @@ namespace VArmory
 
             if (explosionSFX) AudioSource.PlayClipAtPoint(explosionSFX, transform.position);
 
+            EventManager.TriggerSoundGenerated(this.transform.position, 75f);
+
             yield return new WaitForEndOfFrame();
 
             if (explosive)

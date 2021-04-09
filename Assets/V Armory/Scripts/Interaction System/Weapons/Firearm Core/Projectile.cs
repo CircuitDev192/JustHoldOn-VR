@@ -85,6 +85,8 @@ namespace VArmory
 
         public void Fire()
         {
+            EventManager.TriggerSoundGenerated(this.transform.position, 30f);
+
             rb.AddForce(transform.forward * muzzleVelocity, ForceMode.Impulse);
             Destroy(gameObject, 7.5f);
 

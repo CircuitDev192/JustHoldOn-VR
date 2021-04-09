@@ -12,6 +12,9 @@ namespace VArmory
         [SerializeField] protected Transform offset;
         public virtual Transform Offset { get { return offset; } }
 
+        public Vector3 offsetPos;
+        public Quaternion offsetRot;
+
         protected Rigidbody offsetRigidbody;
         public Rigidbody OffsetRigidbody
         {
@@ -55,6 +58,9 @@ namespace VArmory
         {
             gameObject.tag = "Slot";
             gameObject.layer = LayerMask.NameToLayer("ItemDetection");
+
+            offsetPos = offset.localPosition;
+            offsetRot = offset.localRotation;
         }
 
         public bool HasItem { get { return storedItem; } }
