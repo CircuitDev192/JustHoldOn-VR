@@ -20,15 +20,15 @@ public class MissionManager : MonoBehaviour
         EventManager.PlayerLeftMissionGiver += PlayerLeftMissionGiver;
         EventManager.InstantiateNextMission += InstantiateNextMission;
 
-        //MissionData data = SaveManager.LoadMissionIndex();
-        //if (data != null)
-        //{
-        //    currentMission = data.currentMissionIndex;
-        //}
-       // else
-        ////{
-        //    Debug.LogError("Mission Manager did not receive mission data from save file.");
-        //}
+        MissionData data = SaveManager.LoadMissionIndex();
+        if (data != null)
+        {
+            currentMission = data.currentMissionIndex;
+        }
+        else
+        {
+            Debug.LogError("Mission Manager did not receive mission data from save file.");
+        }
     }
 
     private void InstantiateNextMission()

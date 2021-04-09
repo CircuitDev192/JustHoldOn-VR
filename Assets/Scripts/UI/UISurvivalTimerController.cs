@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class UISurvivalTimerController : MonoBehaviour
 {
-    private Text timerText;
-    private Animator fadeToBlackAnim;
+    [SerializeField] private Text timerText;
     [SerializeField] private Image cutToBlack;
     [SerializeField] private Animator cutToBlackAnim;
+    [SerializeField] private Animator fadeToBlackAnim;
     private bool startTimer;
     private bool heliStarted;
     [SerializeField] private float timerValue = 120f;
@@ -17,8 +17,6 @@ public class UISurvivalTimerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timerText = GetComponentInChildren<Text>();
-        fadeToBlackAnim = GetComponentInChildren<Animator>();
         EventManager.StartSurvivalCountdown += StartSurvivalCountdown;
         EventManager.StopSurvivalCountdown += StopSurvivalCountdown;
         EventManager.GameEnded += GameEnded;
@@ -96,6 +94,7 @@ public class UISurvivalTimerController : MonoBehaviour
     private void OnDestroy()
     {
         EventManager.StartSurvivalCountdown -= StartSurvivalCountdown;
+        EventManager.StopSurvivalCountdown -= StopSurvivalCountdown;
         EventManager.GameEnded -= GameEnded;
         EventManager.SurvivalMissionFailed -= SurvivalMissionFailed;
         EventManager.HeliCrashed -= HeliCrashed;

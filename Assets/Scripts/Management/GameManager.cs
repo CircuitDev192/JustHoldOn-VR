@@ -90,19 +90,26 @@ public class GameManager : Context<GameManager>
     {
         //Player manager also listens to this event to play death music
         //Time.timeScale = 0.5f;
-        StartCoroutine(WaitToReloadLevel()); //Will reload the scene 
+        StartCoroutine(WaitToReloadLevel(true)); //Will reload the scene 
     }
 
     private void NPCKilled()
     {
         //Player manager also listens to this event to play death music
         //Time.timeScale = 0.5f;
-        StartCoroutine(WaitToReloadLevel()); //Will reload the scene 
+        StartCoroutine(WaitToReloadLevel(false)); //Will reload the scene 
     }
 
-    IEnumerator WaitToReloadLevel()
+    IEnumerator WaitToReloadLevel(bool playerDead)
     {
-        yield return new WaitForSeconds(14f);
+        if (playerDead)
+        {
+            yield return new WaitForSeconds(12f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(8f);
+        }
         SceneManager.LoadScene("Loading", LoadSceneMode.Single);
 
         /*
