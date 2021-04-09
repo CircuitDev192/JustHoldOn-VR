@@ -48,7 +48,7 @@ public class PlayerManager : MonoBehaviour
         heliHasCrashed = true;
         audioSource.Stop();
         FlashbangDetonated(player.transform.position, 5f);
-        audioSource.PlayOneShot(explosion, soundMultiplier*2f);
+        audioSource.PlayOneShot(explosion, 1f);
         playerRig.transform.position = whereToTelePlayer.position;
         playerRig.transform.rotation = whereToTelePlayer.rotation;
     }
