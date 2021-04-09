@@ -682,6 +682,7 @@ GameObject:
   - component: {fileID: 604705630124791364}
   - component: {fileID: 604705630124791367}
   - component: {fileID: 1243129008153404577}
+  - component: {fileID: 601447852}
   m_Layer: 0
   m_Name: M4
   m_TagString: Untagged
@@ -1284,6 +1285,24 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d78b6825ecb335149b09c7ff399c81d9, type: 3}
   - {fileID: 8300000, guid: f7ceda0cbdfdceb40af92a652dc6ae5a, type: 3}
   restOnSlideStopSounds: []
+--- !u!114 &601447852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604705630124791366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eefae739f19396146af9899dd44eab78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shoulderPointVisual: {fileID: 0}
+  forwardPointVisual: {fileID: 0}
+  head: {fileID: 0}
+  shoulderOffset: {x: -0.05, y: -0.05, z: 0.1}
+  forwardPlaneOffset: 0.525
+  shoulderWeaponDistance: 0.25
 --- !u!1 &604705630308811691
 GameObject:
   m_ObjectHideFlags: 0

@@ -106,6 +106,7 @@ namespace VArmory
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
+            PoseStoredItem();
         }
 
         void ManipulateStack()
@@ -135,7 +136,7 @@ namespace VArmory
 
         protected virtual void Update()
         {
-            PoseStoredItem();
+            
 
             if (interactingVolume)
             {
