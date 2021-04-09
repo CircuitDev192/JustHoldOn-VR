@@ -60,6 +60,8 @@ namespace VArmory
 
             MainMenuObject menuObject = col.gameObject.GetComponentInParent<MainMenuObject>();
 
+            IHeliDamage heliDamage = col.gameObject.GetComponent<IHeliDamage>();
+
             if (damageAble != null)
             {
                 damageAble.Damage(baseDamage, col.gameObject.name);
@@ -69,6 +71,11 @@ namespace VArmory
             if (menuObject != null)
             {
                 menuObject.Hit();
+            }
+
+            if (heliDamage != null)
+            {
+                heliDamage.Damage(Mathf.Clamp(baseDamage, 0f, 24f));
             }
 
             if (explosive) explosive.enabled = true;

@@ -141,9 +141,17 @@ public static class EventManager
     public static Action StartSurvivalCountdown;
     public static void TriggerStartSurvivalCountdown() { StartSurvivalCountdown?.Invoke(); }
 
+    // Stop Survival Countdown
+    public static Action StopSurvivalCountdown;
+    public static void TriggerStopSurvivalCountdown() { StopSurvivalCountdown?.Invoke(); }
+
     // Start Helicopter Move
     public static Action StartHelicopterMove;
     public static void TriggerStartHelicopterMove() { StartHelicopterMove?.Invoke(); }
+
+    // Heli Crashed
+    public static Action HeliCrashed;
+    public static void TriggerHeliCrashed() { HeliCrashed?.Invoke(); }
 
     // Trigger Fade to black anim
     public static Action FadeToBlack;

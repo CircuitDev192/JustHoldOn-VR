@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject player;
 
+    [SerializeField] private GameObject playerRig;
+    [SerializeField] private Transform whereToTelePlayer;
+
     #region Player Values
 
     [SerializeField] private float playerHealth;
@@ -16,9 +20,11 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private AudioClip lastMissionMusic;
     [SerializeField] private AudioClip deathMusic;
     [SerializeField] private AudioClip killedNPCMusic;
+    [SerializeField] private AudioClip explosion;
     [SerializeField] public float soundMultiplier = 1f;
     private bool isInLastMission = false;
     private bool failState = false;
+    private bool heliHasCrashed = false;
 
     #endregion
 
@@ -34,6 +40,17 @@ public class PlayerManager : MonoBehaviour
         EventManager.NPCKilled += NPCKilled;
         EventManager.PlayerEnteredMissionVehicle += PlayerEnteredMissionVehicle;
         EventManager.FlashbangDetonated += FlashbangDetonated;
+        EventManager.HeliCrashed += HeliCrashed;
+    }
+
+    private void HeliCrashed()
+    {
+        heliHasCrashed = true;
+        audioSource.Stop();
+        FlashbangDetonated(player.transform.position, 5f);
+        audioSource.PlayOneShot(explosion, soundMultiplier*2f);
+        playerRig.transform.position = whereToTelePlayer.position;
+        playerRig.transform.rotation = whereToTelePlayer.rotation;
     }
 
     private void PlayerKilled()
@@ -51,7 +68,7 @@ public class PlayerManager : MonoBehaviour
     {
         //Same as player killed but may need additional functions for NPC death
         //  so making a seperate event
-        if (!isInLastMission && !failState)
+        if ((!isInLastMission && !failState) || heliHasCrashed)
         {
             failState = true;
             audioSource.PlayOneShot(killedNPCMusic);
@@ -97,5 +114,6 @@ public class PlayerManager : MonoBehaviour
         EventManager.NPCKilled -= NPCKilled;
         EventManager.PlayerEnteredMissionVehicle -= PlayerEnteredMissionVehicle;
         EventManager.FlashbangDetonated -= FlashbangDetonated;
+        EventManager.HeliCrashed -= HeliCrashed;
     }
 }

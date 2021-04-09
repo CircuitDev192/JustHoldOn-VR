@@ -7,6 +7,8 @@ public class UISurvivalTimerController : MonoBehaviour
 {
     private Text timerText;
     private Animator fadeToBlackAnim;
+    [SerializeField] private Image cutToBlack;
+    [SerializeField] private Animator cutToBlackAnim;
     private bool startTimer;
     private bool heliStarted;
     [SerializeField] private float timerValue = 120f;
@@ -18,8 +20,10 @@ public class UISurvivalTimerController : MonoBehaviour
         timerText = GetComponentInChildren<Text>();
         fadeToBlackAnim = GetComponentInChildren<Animator>();
         EventManager.StartSurvivalCountdown += StartSurvivalCountdown;
+        EventManager.StopSurvivalCountdown += StopSurvivalCountdown;
         EventManager.GameEnded += GameEnded;
         EventManager.SurvivalMissionFailed += SurvivalMissionFailed;
+        EventManager.HeliCrashed += HeliCrashed;
     }
 
     private void GameEnded()
@@ -33,12 +37,24 @@ public class UISurvivalTimerController : MonoBehaviour
         startTimer = true;
     }
 
+    private void StopSurvivalCountdown()
+    {
+        timerText.enabled = false;
+        startTimer = false;
+    }
+
     private void SurvivalMissionFailed()
     {
         if (timerValue > 10f)
         {
             EventManager.TriggerPlayerKilled();
         }
+    }
+
+    private void HeliCrashed()
+    {
+        cutToBlack.gameObject.SetActive(true);
+        StartCoroutine(FadeBackIn());
     }
 
     // Update is called once per frame
@@ -69,10 +85,19 @@ public class UISurvivalTimerController : MonoBehaviour
         }
     }
 
+    IEnumerator FadeBackIn()
+    {
+        yield return new WaitForSeconds(3f);
+        cutToBlackAnim.SetTrigger("Start");
+        yield return new WaitForSeconds(5f);
+        EventManager.TriggerNPCKilled();
+    }
+
     private void OnDestroy()
     {
         EventManager.StartSurvivalCountdown -= StartSurvivalCountdown;
         EventManager.GameEnded -= GameEnded;
         EventManager.SurvivalMissionFailed -= SurvivalMissionFailed;
+        EventManager.HeliCrashed -= HeliCrashed;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -38,7 +39,9 @@ public class ZombieSpawnManager : MonoBehaviour
         player = PlayerManager.instance.player;
         EventManager.zombieShouldDespawn += DespawnZombie;
         EventManager.ZombieKilled += ZombieDied;
+        EventManager.HeliCrashed += HeliCrashed;
     }
+
 
     private void FixedUpdate()
     {
@@ -88,9 +91,9 @@ public class ZombieSpawnManager : MonoBehaviour
         float zOffset = 0;
 
 
-        index = Random.Range(0, validSpawns.Count);
-        xOffset = Random.Range(-spawnRadius, spawnRadius);
-        zOffset = Random.Range(-spawnRadius, spawnRadius);
+        index = UnityEngine.Random.Range(0, validSpawns.Count);
+        xOffset = UnityEngine.Random.Range(-spawnRadius, spawnRadius);
+        zOffset = UnityEngine.Random.Range(-spawnRadius, spawnRadius);
 
         Vector3 spawnLoc = validSpawns[index].transform.position;
         spawnLoc.x += xOffset;
@@ -108,7 +111,7 @@ public class ZombieSpawnManager : MonoBehaviour
             return;
         }
 
-        zombies.Add(Instantiate(zombiePrefabs[Random.Range(0, zombiePrefabs.Length)], spawnLoc, Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0)));
+        zombies.Add(Instantiate(zombiePrefabs[UnityEngine.Random.Range(0, zombiePrefabs.Length)], spawnLoc, Quaternion.Euler(0, UnityEngine.Random.Range(0.0f, 360.0f), 0)));
         //Debug.Log("Zombie spawned successfully!");
     }
 
@@ -142,9 +145,9 @@ public class ZombieSpawnManager : MonoBehaviour
         float zOffset = 0;
 
 
-        index = Random.Range(0, missionSpawnPoints.Length);
-        xOffset = Random.Range(-spawnRadius, spawnRadius);
-        zOffset = Random.Range(-spawnRadius, spawnRadius);
+        index = UnityEngine.Random.Range(0, missionSpawnPoints.Length);
+        xOffset = UnityEngine.Random.Range(-spawnRadius, spawnRadius);
+        zOffset = UnityEngine.Random.Range(-spawnRadius, spawnRadius);
 
         Vector3 spawnLoc = missionSpawnPoints[index].transform.position;
         spawnLoc.x += xOffset;
@@ -161,11 +164,16 @@ public class ZombieSpawnManager : MonoBehaviour
         // Debug.LogError("Physics check failed for spawn!");
         // return;
         //}
-        GameObject missionZombie = Instantiate(zombiePrefabs[Random.Range(0, zombiePrefabs.Length)], spawnLoc, Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
+        GameObject missionZombie = Instantiate(zombiePrefabs[UnityEngine.Random.Range(0, zombiePrefabs.Length)], spawnLoc, Quaternion.Euler(0, UnityEngine.Random.Range(0.0f, 360.0f), 0));
         missionZombies.Add(missionZombie);
         EventManager.TriggerMissionZombieSpawned(missionZombie);
         //Just to be sure
         Debug.LogWarning("Mission Zombie spawned.");
+    }
+
+    private void HeliCrashed()
+    {
+        StopMissionZombieSpawns();
     }
 
     private void ZombieDied(GameObject zombie)
@@ -181,5 +189,6 @@ public class ZombieSpawnManager : MonoBehaviour
     {
         EventManager.zombieShouldDespawn -= DespawnZombie;
         EventManager.ZombieKilled -= ZombieDied;
+        EventManager.HeliCrashed -= HeliCrashed;
     }
 }

@@ -101,6 +101,7 @@ public abstract class ZombieContext : Context<ZombieContext>, IDamageAble
         EventManager.PlayerKilled += PlayerKilled;
         EventManager.SoundGenerated += SoundGenerated;
         EventManager.ZombieCharge += ZombieCharge;
+        EventManager.HeliCrashed += HeliCrashed;
 
         playerTransform = PlayerManager.instance.player.transform;
         currentSpeed = walkSpeed;
@@ -164,6 +165,13 @@ public abstract class ZombieContext : Context<ZombieContext>, IDamageAble
             }
         }
 
+        currentState.EnterState(this);
+    }
+
+    private void HeliCrashed()
+    {
+        currentState.ExitState(this);
+        currentState = deadState;
         currentState.EnterState(this);
     }
 
@@ -256,5 +264,6 @@ public abstract class ZombieContext : Context<ZombieContext>, IDamageAble
         EventManager.PlayerKilled -= PlayerKilled;
         EventManager.SoundGenerated -= SoundGenerated;
         EventManager.ZombieCharge -= ZombieCharge;
+        EventManager.HeliCrashed -= HeliCrashed;
     }
 }
