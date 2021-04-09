@@ -23,6 +23,8 @@ public class MissionSurvive : MonoBehaviour
     {
         EventManager.EndMission += EndMission;
         EventManager.PlayerEnteredMissionVehicle += PlayerEnteredMissionVehicle;
+        ZombieSpawnManager.instance.SetMissionZombieSpawns(spawnPoints, zombiesToSpawn, shouldSpawnZombiesAtMissionArea, true);
+        StartCoroutine(StartZombieCharge());
 
         EventManager.TriggerMissionChanged(missionTitle, missionDescription);
         EventManager.TriggerMissionWaypointChanged(missionObjectiveLocation.position);
@@ -32,12 +34,10 @@ public class MissionSurvive : MonoBehaviour
 
     private void PlayerEnteredMissionVehicle()
     {
-        ZombieSpawnManager.instance.SetMissionZombieSpawns(spawnPoints, zombiesToSpawn, shouldSpawnZombiesAtMissionArea, true);
         EventManager.TriggerMissionWaypointChanged(missionObjective2Location.position);
 
         StartCoroutine(FireFlares());
 
-        StartCoroutine(StartZombieCharge());
 
         EventManager.TriggerStartSurvivalCountdown();
     }
@@ -53,7 +53,6 @@ public class MissionSurvive : MonoBehaviour
 
     IEnumerator StartZombieCharge()
     {
-        yield return new WaitForSeconds(2f);
         while (true)
         {
             EventManager.TriggerZombieCharge(chargeTransform);
@@ -65,19 +64,19 @@ public class MissionSurvive : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         GameObject flare = Instantiate(flarePrefab, flareSpawnLocations[0].position, Quaternion.identity);
-        flare.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0.05f, 1f, 0.1f) * 3000f);
+        flare.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0.05f, 1f, 0.1f) * 50f, ForceMode.Impulse);
 
         yield return new WaitForSeconds(1f);
         flare = Instantiate(flarePrefab, flareSpawnLocations[1].position, Quaternion.identity);
-        flare.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-0.05f, 0.9f, 0.15f) * 3000f);
+        flare.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-0.05f, 0.9f, 0.15f) * 50f, ForceMode.Impulse);
 
         yield return new WaitForSeconds(0.3f);
         flare = Instantiate(flarePrefab, flareSpawnLocations[2].position, Quaternion.identity);
-        flare.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-0.05f, 0.9f, 0.05f) * 3000f);
+        flare.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-0.05f, 0.9f, 0.05f) * 50f, ForceMode.Impulse);
 
         yield return new WaitForSeconds(1f);
         flare = Instantiate(flarePrefab, flareSpawnLocations[3].position, Quaternion.identity);
-        flare.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-0.05f, 0.8f, 0.05f) * 3000f);
+        flare.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-0.05f, 0.8f, 0.05f) * 50f, ForceMode.Impulse);
     }
 
     private void OnDestroy()
