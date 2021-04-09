@@ -83,9 +83,16 @@ namespace VArmory
                     Destroy(gameObject);
         }
 
-        public void Fire()
+        public void Fire(bool suppressed)
         {
-            EventManager.TriggerSoundGenerated(this.transform.position, 30f);
+            if (!suppressed)
+            {
+                EventManager.TriggerSoundGenerated(this.transform.position, 30f);
+            }
+            else
+            {
+                EventManager.TriggerSoundGenerated(this.transform.position, 3f);
+            }
 
             rb.AddForce(transform.forward * muzzleVelocity, ForceMode.Impulse);
             Destroy(gameObject, 7.5f);

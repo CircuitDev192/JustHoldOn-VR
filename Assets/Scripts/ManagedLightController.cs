@@ -35,7 +35,7 @@ public class ManagedLightController : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo))
         {
             // We hit something before the point
-            if (hitInfo.distance < distance) return 0f;
+            if (hitInfo.distance < distance * 0.9f) return 0f;
         }
 
         // Perform illumination calculation based on light type and return

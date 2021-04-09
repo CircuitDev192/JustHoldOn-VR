@@ -15,7 +15,7 @@ public abstract class ZombieBaseState : BaseState<ZombieContext>
     public bool SeesPlayer(ZombieContext context)
     {
         Vector3 playerPosition = context.playerTransform.position + Vector3.up;
-        Vector3 zombiePosition = context.transform.position;
+        Vector3 zombiePosition = context.transform.position + Vector3.up;
 
         float distance = Vector3.Distance(zombiePosition, playerPosition);
 
@@ -23,7 +23,7 @@ public abstract class ZombieBaseState : BaseState<ZombieContext>
         if (distance > context.visionDistance) return false;
 
         Vector3 directionToPlayer = (playerPosition - zombiePosition).normalized;
-        Ray ray = new Ray(context.transform.position + Vector3.up + directionToPlayer * 1f, directionToPlayer);
+        Ray ray = new Ray(zombiePosition + directionToPlayer * 1f, directionToPlayer);
 
         RaycastHit hitInfo;
 

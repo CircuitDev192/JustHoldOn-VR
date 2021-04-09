@@ -617,7 +617,7 @@ namespace VArmory
                 recoilManager.IncreaseAllRecoil();
 
             if (muzzleVelocity == 0)
-                chambers[i].Bullet.Fire(muzzle);
+                chambers[i].Bullet.Fire(muzzle, suppressed);
             else
                 chambers[i].Bullet.Fire(muzzle, muzzleVelocity, spread);
 

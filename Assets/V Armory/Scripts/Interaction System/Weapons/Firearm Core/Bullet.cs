@@ -78,7 +78,7 @@ namespace VArmory
             base.Awake();
         }
 
-        public void Fire(Transform muzzle)
+        public void Fire(Transform muzzle, bool suppressed)
         {
             spent = true;
 
@@ -92,7 +92,7 @@ namespace VArmory
                 projectile.transform.position = muzzle.position;
                 projectile.transform.rotation = muzzle.rotation;
                 projectile.gameObject.SetActive(true);
-                projectile.Fire();
+                projectile.Fire(suppressed);
             }
         }
 
