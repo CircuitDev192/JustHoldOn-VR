@@ -7,6 +7,7 @@ public class CutsceneNPCController : MonoBehaviour
 {
     private Animator animator;
     private NavMeshAgent nav;
+    public SkinnedMeshRenderer meshRenderer;
     [SerializeField] private Transform navTarget;
     public bool shouldRun = false;
 
@@ -15,7 +16,9 @@ public class CutsceneNPCController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
-        nav.speed = 6f;
+        meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        meshRenderer.enabled = false;
+        nav.speed = Random.Range(3.5f, 5f);
         StartCoroutine(PlayRunAnim());
     }
 
@@ -26,6 +29,11 @@ public class CutsceneNPCController : MonoBehaviour
         {
             nav.SetDestination(navTarget.position);
             shouldRun = false;
+        }
+
+        if (Vector3.Distance(navTarget.position, transform.position) < 1f)
+        {
+            Destroy(this.gameObject);
         }
     }
 

@@ -169,6 +169,10 @@ public static class EventManager
     public static Action GameEnded;
     public static void TriggerGameEnded() { GameEnded?.Invoke(); }
 
+    // Credits
+    public static Action StartCredits;
+    public static void TriggerStartCredits() { StartCredits?.Invoke(); }
+
     #endregion
 
     #region Player Info Events

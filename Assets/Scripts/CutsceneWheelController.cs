@@ -13,6 +13,6 @@ public class CutsceneWheelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.localRotation *= Quaternion.AngleAxis(210 * Time.deltaTime, Vector3.left);
+        this.transform.rotation *= Quaternion.AngleAxis(210 * Time.deltaTime, Vector3.right);
     }
 }

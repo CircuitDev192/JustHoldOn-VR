@@ -2,27 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using VArmory;
 
 public class EndingSequenceManager : MonoBehaviour
 {
-    [SerializeField] private GameObject vehicles;
+    [SerializeField] private GameObject invisWalls; //hold player in at the end
     [SerializeField] private GameObject[] npcs;
-    [SerializeField] private GameObject helicopter;
-    private Camera cam;
-    [SerializeField] private Transform camStartPos2; //where the cam should go for scene 2
-    [SerializeField] private Vector3 cameraStartAngle2; //rotation for scene 2
-    [SerializeField] private Vector3 cameraStartAngle3; //rotation for scene 3
-    [SerializeField] private Transform camStartPos3; //where the cam should go for scene 3
-    [SerializeField] private float creditsWaitTime;
     private int currentCreditsSequence = 0;
-    private bool moveCam = true;
+    [SerializeField] private GameObject playerRig;
+    [SerializeField] private GameObject playerController;
+    [SerializeField] private GameObject heli;
+    [SerializeField] private Transform playerTele;
+    [SerializeField] private Transform playerTeleHeli;
+    [SerializeField] private Animator fadeInOut;
 
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
         EventManager.StartNextCreditsSequence += StartNextCreditsSequence;
-        StartCoroutine(EndGameSequence());
+    }
+
+    private void Update()
+    {
+        if (Vector3.Distance(heli.transform.position, playerRig.transform.position) < 5f && currentCreditsSequence == 1)
+        {
+            StartNextCreditsSequence();
+        }
     }
 
     private void StartNextCreditsSequence()
@@ -31,67 +36,59 @@ public class EndingSequenceManager : MonoBehaviour
         switch (currentCreditsSequence)
         {
             case 1:
-                //set camera to next pos, trigger event to start the next movement
-                Destroy(vehicles.gameObject, 1f);
-                cam.transform.position = camStartPos2.position;
-                cam.transform.eulerAngles = cameraStartAngle2;
-                StartCoroutine(MoveCamera());
-                foreach (GameObject npc in npcs)
-                {
-                    npc.GetComponent<CutsceneNPCController>().shouldRun = true;
-                }
+                //fade to black first, then do this
+                fadeInOut.SetTrigger("FadeToBlack");
+                StartCoroutine(WaitToTelePlayer());
+                
                 break;
             case 2:
-                moveCam = false;
-                helicopter.transform.position = new Vector3(helicopter.transform.position.x, helicopter.transform.position.y + 20, helicopter.transform.position.z);
-                helicopter.GetComponentInChildren<HelicopterController>().startMove = true;
-                cam.transform.position = camStartPos3.position;
-                cam.transform.eulerAngles = cameraStartAngle3;
-                foreach (GameObject npc in npcs)
-                {
-                    Destroy(npc.gameObject);
-                }
-                break;
-            case 3:
-                //trigger a hold black, then set scene back to main menu
-                EventManager.TriggerCreditsUI();
-                StartCoroutine(WaitForCredits());
+
+                //fade to black again
+                fadeInOut.SetTrigger("FadeToBlack");
+                StartCoroutine(WaitToTelePlayer2());
+                StartCoroutine(WaitToEndGame());
                 break;
             default:
                 break;
         }
     }
 
-    IEnumerator MoveCamera()
+    IEnumerator WaitToTelePlayer()
     {
-        while (moveCam)
-        {
-            cam.transform.Translate(Vector3.forward * 6f * Time.deltaTime);
-            yield return null;
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        yield return new WaitForSeconds(2.6f);
+        playerRig.transform.position = playerTele.position;
+        playerRig.transform.rotation = playerTele.rotation;
         
-    }
+        invisWalls.SetActive(true);
 
-    IEnumerator WaitForCredits()
-    {
-        yield return new WaitForSeconds(creditsWaitTime);
-        SceneManager.LoadScene(0);
-    }
-
-    IEnumerator EndGameSequence()
-    {
-        for (int i = 0; i < 3; i++)
+        foreach (GameObject npc in npcs)
         {
-            yield return new WaitForSeconds(7f);
-            EventManager.TriggerFadeToBlack();
-            yield return new WaitForSeconds(3f);
-            EventManager.TriggerStartNextCreditsSequence();
+            npc.GetComponent<CutsceneNPCController>().meshRenderer.enabled = true;
+            npc.GetComponent<CutsceneNPCController>().shouldRun = true;
         }
+
+        yield return new WaitForSeconds(2f);
+        fadeInOut.SetTrigger("FadeFromBlack");
+    }
+
+    IEnumerator WaitToTelePlayer2()
+    {
+        yield return new WaitForSeconds(2.6f);
+        playerRig.transform.position = playerTeleHeli.position;
+        playerRig.transform.rotation = playerTeleHeli.rotation;
+        playerRig.transform.parent = heli.transform;
+        heli.transform.position += new Vector3(0f, 20f, 0f);
+        EventManager.TriggerStartHelicopterMove();
+        yield return new WaitForSeconds(2f);
+        fadeInOut.SetTrigger("FadeFromBlack");
+    }
+
+    IEnumerator WaitToEndGame()
+    {
+        yield return new WaitForSeconds(7.5f);
+        fadeInOut.SetTrigger("FadeToBlack");
+        yield return new WaitForSeconds(3f);
+        EventManager.TriggerStartCredits();
     }
 
     private void OnDestroy()

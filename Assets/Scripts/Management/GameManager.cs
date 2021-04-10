@@ -56,6 +56,7 @@ public class GameManager : Context<GameManager>
         EventManager.UIResumeClicked += UIResumeClicked;
         EventManager.UIQuitClicked += UIQuitClicked;
         EventManager.GameEnded += GameEnded;
+        EventManager.StartCredits += StartCredits;
         EventManager.PlayerKilled += PlayerKilled;
         EventManager.NPCKilled += NPCKilled;
     }
@@ -176,6 +177,11 @@ public class GameManager : Context<GameManager>
         Application.Quit();
     }
 
+    private void StartCredits()
+    {
+        LoadSceneSynchronous("Credits");
+    }
+
     #endregion
 
     IEnumerator EndGameSequence()
@@ -189,6 +195,7 @@ public class GameManager : Context<GameManager>
         EventManager.UIResumeClicked -= UIResumeClicked;
         EventManager.UIQuitClicked -= UIQuitClicked;
         EventManager.GameEnded -= GameEnded;
+        EventManager.StartCredits -= StartCredits;
         EventManager.PlayerKilled -= PlayerKilled;
         EventManager.NPCKilled -= NPCKilled;
     }

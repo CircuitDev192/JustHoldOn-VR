@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class StaticPosForHMG : MonoBehaviour
 {
-    private Vector3 pos;
-    // Start is called before the first frame update
-    void Start()
-    {
-        pos = this.transform.position;
-    }
+    [SerializeField] private Transform pos;
 
     public void ResetPos()
     {
-        this.transform.position = pos;
+        this.transform.position = pos.position + new Vector3(0f, 0.0374295f, 0f);
     }
 }
