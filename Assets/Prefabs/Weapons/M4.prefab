@@ -1752,13 +1752,13 @@ MonoBehaviour:
   loadBulletDot: 0.75
   requireHeldBullets: 1
   ejectForce: 0.0225
-  ejectTorque: 0
+  ejectTorque: 10
   eject: {fileID: 604705631727834937}
   chamberDotAxis: 4
   bulletDotAxis: 4
   interactionVolume: {fileID: 0}
   ejectDirection: 0
-  torqueDirection: 2
+  torqueDirection: 1
 --- !u!1 &604705631103180672
 GameObject:
   m_ObjectHideFlags: 0
