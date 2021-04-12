@@ -440,7 +440,8 @@ namespace VArmory
 
             Debug.Log("Successfully ejected cartridge");
 
-            tempChamber.EjectBullet(velocityHistory._ReleaseVelocity);
+            //tempChamber.EjectBullet(velocityHistory._ReleaseVelocity);
+            tempChamber.EjectBullet(Vector3.zero);
         }
 
         protected virtual void SlideStop()
