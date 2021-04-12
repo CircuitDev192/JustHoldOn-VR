@@ -261,19 +261,19 @@ namespace VArmory
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
-
-
+            /*
             //USE A SPHERE COLLIDER ON EACH HAND, IF THEY COLLIDE, AND ONE HAND IS HOLDING A FIREARM, AND ALLOWOFFHANDSTABILIZATION IS ON, SCALE RECOIL. 
-            if (PrimaryGrip && allowOffHandStabilization && Vector3.Distance(hands[0].transform.position, hands[1].transform.position) < offhandStabilizationDistance)
+            if (allowOffHandStabilization && Vector3.Distance(hands[0].gameObject.transform.position, hands[1].gameObject.transform.position) < offhandStabilizationDistance)
             {
-                recoilManager.ScaleRotation(0.1f, 0.1f, 1, 0.1f, 1);
-                recoilManager.ScaleTranslation(0.5f, 0.5f, 1, 0.5f, 1);
+                recoilManager.ScaleRotation(0.05f, 0f, 0.1f, 0f, 0.1f);
+                recoilManager.ScaleTranslation(0.5f, 0.5f, 1f, 0.5f, 1f);
             }
             else if (allowOffHandStabilization)
             {
                 recoilManager.UnscaleRotation();
                 recoilManager.UnscaleTranslation();
             }
+            */
         }
 
         bool releasedTriggerAfterPickUp = true;

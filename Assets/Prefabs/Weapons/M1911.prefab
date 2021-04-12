@@ -506,7 +506,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3480760373558705890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.0278, y: 0.0334, z: -0.0075}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7522817616131290173}
@@ -606,8 +606,8 @@ MonoBehaviour:
   loadBulletDistance: 0.15
   loadBulletDot: 0.75
   requireHeldBullets: 1
-  ejectForce: 5
-  ejectTorque: 7.5
+  ejectForce: 0.0225
+  ejectTorque: 0
   eject: {fileID: 3480760373558705889}
   chamberDotAxis: 4
   bulletDotAxis: 4
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   spread: 0
   slideEjectVelocity: 0
   allowOffHandStabilization: 1
-  offhandStabilizationDistance: 0
+  offhandStabilizationDistance: 0.18
   hands:
   - {fileID: 0}
   - {fileID: 0}
@@ -1815,10 +1815,10 @@ MonoBehaviour:
       debug: 0
       increaseChance: 0
       limits: {x: -90, y: 90}
-      increment: 5
-      decreaseTargetSpeed: 30
+      increment: 3
+      decreaseTargetSpeed: 80
       increaseSpeed: 80
-      decreaseSpeed: 30
+      decreaseSpeed: 80
       twoHandMaxScale: 1
       twoHandIncrementScale: 1
       twoHandDecreaseTargetScale: 1
@@ -1864,9 +1864,9 @@ MonoBehaviour:
       increaseChance: 0.5
       limits: {x: -60, y: 60}
       increment: 5
-      decreaseTargetSpeed: 40
+      decreaseTargetSpeed: 70
       increaseSpeed: 70
-      decreaseSpeed: 40
+      decreaseSpeed: 70
       twoHandMaxScale: 1
       twoHandIncrementScale: 1
       twoHandDecreaseTargetScale: 1
@@ -1912,9 +1912,9 @@ MonoBehaviour:
       increaseChance: 0.5
       limits: {x: -15, y: 15}
       increment: 4
-      decreaseTargetSpeed: 50
+      decreaseTargetSpeed: 100
       increaseSpeed: 100
-      decreaseSpeed: 50
+      decreaseSpeed: 100
       twoHandMaxScale: 1
       twoHandIncrementScale: 1
       twoHandDecreaseTargetScale: 1
@@ -1964,7 +1964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee64cdb870b76f48a0eca169b48de16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sockets: []
+  sockets:
+  - {fileID: 4165528439347951303}
 --- !u!114 &608699816855796269
 MonoBehaviour:
   m_ObjectHideFlags: 0
