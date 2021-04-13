@@ -98,9 +98,9 @@ public class UIWaypointController : MonoBehaviour
 
         float angle = Vector3.Angle(Vector3.forward, normalizedDirToObj);
 
-        float zAngle = ((angle * sign) - playerLook) % 360;
+        float zAngle = (playerLook - (angle * sign)) % 360;
 
-        rectTransform.localEulerAngles = new Vector3(180, 0, zAngle);
+        rectTransform.localEulerAngles = new Vector3(0, 0, zAngle);
         //}
     }
 
