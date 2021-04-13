@@ -24,7 +24,7 @@ public class EndingSequenceManager : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(heli.transform.position, playerRig.transform.position) < 5f && currentCreditsSequence == 1)
+        if (Vector3.Distance(heli.transform.position, playerRig.transform.position) < 7f && currentCreditsSequence == 1)
         {
             StartNextCreditsSequence();
         }

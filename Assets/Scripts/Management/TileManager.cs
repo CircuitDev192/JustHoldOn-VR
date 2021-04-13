@@ -12,8 +12,10 @@ public class TileManager : MonoBehaviour
     void Start()
     {
         playerTransform = PlayerManager.instance.player.transform;
+        StartCoroutine(CheckPlayerDist());
     }
 
+    /*
     void FixedUpdate()
     {
         foreach (GameObject tile in tiles)
@@ -25,4 +27,22 @@ public class TileManager : MonoBehaviour
             else tile.SetActive(true);
         }
     }
+    */
+
+    IEnumerator CheckPlayerDist()
+    {
+        while (true)
+        {
+            foreach (GameObject tile in tiles)
+            {
+                yield return null;
+                float distance = Vector3.Distance(playerTransform.position, tile.transform.position);
+                yield return null;
+                if (distance > activeDistance) tile.SetActive(false);
+
+                else tile.SetActive(true);
+            }
+        }
+    }
+
 }

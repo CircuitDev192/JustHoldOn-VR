@@ -8,11 +8,11 @@ namespace VArmory
     {
         [SerializeField] private GameObject[] items;
 
-        private List<Transform> itemStartPos = new List<Transform>();
+        private List<Vector3> itemStartPos = new List<Vector3>();
+        private List<Quaternion> itemStartRot = new List<Quaternion>();
 
-        private float timeToCheckDistance = 30f;
+        private float timeToCheckDistance = 15f;
         private float timer = 0;
-        private bool shouldTeleItems = false;
          
         InteractionVolume iv;
 
@@ -29,25 +29,20 @@ namespace VArmory
 
             for (int i = 0; i < items.Length; i++)
             {
-                itemStartPos.Add(items[i].transform);
+                itemStartPos.Add(items[i].transform.position);
+                itemStartRot.Add(items[i].transform.rotation);
             }
 
             timer = timeToCheckDistance;
-            shouldTeleItems = true;
         }
 
-        private void LateUpdate()
+        private void Update()
         {
             timer -= Time.deltaTime;
 
             if (timer <= 0f)
             {
-                if (shouldTeleItems)
-                {
-                    Debug.Log("Teleporting lost items back to base.");
-                    TeleItems();
-                    //shouldTeleItems = false;
-                }
+                TeleItems();            
                 timer = timeToCheckDistance;
             }
         }
@@ -58,10 +53,10 @@ namespace VArmory
             Vector3 playerPos = PlayerManager.instance.player.transform.position;
             for (int i = 0; i < items.Length; i++)
             {
-                if(Vector3.Distance(playerPos, items[i].transform.position) > 2f)
+                if(Vector3.Distance(playerPos, items[i].transform.position) >= 3f && Vector3.Distance(items[i].transform.position, itemStartPos[i]) >= 3f)
                 {
-                    items[i].transform.position = itemStartPos[i].position;
-                    items[i].transform.rotation = itemStartPos[i].rotation;
+                    items[i].transform.position = itemStartPos[i];
+                    items[i].transform.rotation = itemStartRot[i];
                 }
             }
 
