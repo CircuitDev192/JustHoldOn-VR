@@ -23,7 +23,7 @@ namespace VArmory
         {
             base.PrimaryGrasp();
             characterController = PrimaryHand.CharController;
-            TwitchExtension.SetItemLayerRecursivly(gameObject, "Default");
+            //TwitchExtension.SetItemLayerRecursivly(gameObject, "Default");
             climbGrabPosition = PrimaryHand.transform.position;
             characterController.ClimbingHand = PrimaryHand;
             characterController.climbable = transform;
@@ -45,7 +45,7 @@ namespace VArmory
 
             base.PrimaryDrop();
 
-            gameObject.layer = LayerMask.NameToLayer("Item");
+            //gameObject.layer = LayerMask.NameToLayer("Item");
         }
     }
 }
