@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TileManagerButBetter : MonoBehaviour
 {
-    private float activeDistance = 150f;
 
     private void OnValidate()
     {
