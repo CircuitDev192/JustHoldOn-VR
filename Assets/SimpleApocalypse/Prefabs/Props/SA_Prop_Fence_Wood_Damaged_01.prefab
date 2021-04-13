@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 64925610397507420}
   - component: {fileID: -2998202667227375630}
   - component: {fileID: 7733611337520538960}
-  m_Layer: 0
+  - component: {fileID: 5804388734894608192}
+  m_Layer: 2
   m_Name: SA_Prop_Fence_Wood_Damaged_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,3 +212,16 @@ MonoBehaviour:
   LeftPoseValue: 0
   RightPolarity: 0
   LeftPolarity: 0
+--- !u!65 &5804388734894608192
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.339922, y: 3.151417, z: 5.3564267}
+  m_Center: {x: 1.1388841, y: 1.5757083, z: 2.6782134}

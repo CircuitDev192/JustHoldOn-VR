@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 64431161629330866}
   - component: {fileID: 147096373659444224}
   - component: {fileID: 3868202424080623246}
-  m_Layer: 0
+  - component: {fileID: -451579870787717114}
+  m_Layer: 2
   m_Name: SA_Prop_FenceWoodL_Patched_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,3 +212,16 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   climbGrabPosition: {x: 0, y: 0, z: 0}
+--- !u!65 &-451579870787717114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7418213, y: 6.326086, z: 5.347336}
+  m_Center: {x: 0.24588776, y: 3.163043, z: 2.6736603}

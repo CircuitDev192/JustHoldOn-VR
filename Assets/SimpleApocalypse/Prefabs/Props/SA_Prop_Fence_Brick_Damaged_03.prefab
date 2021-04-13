@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 64684195674734470}
   - component: {fileID: -1401595142580627339}
   - component: {fileID: 5498817282112344844}
-  m_Layer: 0
+  - component: {fileID: -8036711708246183455}
+  m_Layer: 2
   m_Name: SA_Prop_Fence_Brick_Damaged_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,3 +212,16 @@ MonoBehaviour:
   LeftPoseValue: 0
   RightPolarity: 0
   LeftPolarity: 0
+--- !u!65 &-8036711708246183455
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4935188, y: 2.9997227, z: 5.0731697}
+  m_Center: {x: 0.271513, y: 1.4998614, z: 2.5365849}

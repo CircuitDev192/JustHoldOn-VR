@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 64999193218783252}
   - component: {fileID: -3238365371205643708}
   - component: {fileID: 3474230980601840720}
-  m_Layer: 0
+  - component: {fileID: 1603168685676659920}
+  m_Layer: 2
   m_Name: SA_Prop_Fence_Wire_Damaged_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,3 +212,16 @@ MonoBehaviour:
   LeftPoseValue: 0
   RightPolarity: 0
   LeftPolarity: 0
+--- !u!65 &1603168685676659920
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0390549, y: 3.2712703, z: 5.892681}
+  m_Center: {x: 0.57299423, y: 1.5973432, z: 2.9463406}

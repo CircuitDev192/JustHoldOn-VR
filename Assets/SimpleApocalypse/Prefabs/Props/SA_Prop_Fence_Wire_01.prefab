@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 64181306203453950}
   - component: {fileID: 598188831668206172}
   - component: {fileID: -314362964823052438}
-  m_Layer: 0
+  - component: {fileID: -6506771762730742501}
+  m_Layer: 2
   m_Name: SA_Prop_Fence_Wire_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,3 +212,16 @@ MonoBehaviour:
   LeftPoseValue: 0
   RightPolarity: 0
   LeftPolarity: 0
+--- !u!65 &-6506771762730742501
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15756226, y: 3.2712703, z: 5.1792126}
+  m_Center: {x: 0.07257843, y: 1.5973432, z: 2.5896063}

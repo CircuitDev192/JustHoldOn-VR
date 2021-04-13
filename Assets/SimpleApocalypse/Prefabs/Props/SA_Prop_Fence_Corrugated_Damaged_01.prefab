@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 64537889832718902}
   - component: {fileID: -5651290812505754988}
   - component: {fileID: 2124916504239908681}
-  m_Layer: 0
+  - component: {fileID: 5050137195383888351}
+  m_Layer: 2
   m_Name: SA_Prop_Fence_Corrugated_Damaged_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,3 +212,16 @@ MonoBehaviour:
   LeftPoseValue: 0
   RightPolarity: 0
   LeftPolarity: 0
+--- !u!65 &5050137195383888351
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.826416, y: 3.2641559, z: 5.0487537}
+  m_Center: {x: -0.009628296, y: 1.6320779, z: 2.520751}
