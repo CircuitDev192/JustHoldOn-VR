@@ -1,200 +1,195 @@
 {
-  "bindings": {
-    "/actions/buggy": {
-      "chords": [],
-      "poses": [],
-      "haptics": [],
-      "sources": [],
-      "skeleton": []
-    },
-    "/actions/default": {
-      "chords": [],
-      "poses": [],
-      "haptics": [],
-      "sources": [],
-      "skeleton": []
-    },
-    "/actions/platformer": {
-      "chords": [],
-      "poses": [],
-      "haptics": [],
-      "sources": [],
-      "skeleton": []
-    },
-    "/actions/varmory": {
-      "chords": [],
-      "poses": [
-        {
-          "output": "/actions/varmory/in/leftpose",
-          "path": "/user/hand/left/pose/base"
-        },
-        {
-          "output": "/actions/varmory/in/rightpose",
-          "path": "/user/hand/right/pose/base"
-        },
-        {
-          "output": "/actions/varmory/in/leftpose",
-          "path": "/user/hand/left/pose/handgrip"
-        },
-        {
-          "output": "/actions/varmory/in/rightpose",
-          "path": "/user/hand/right/pose/handgrip"
-        },
-        {
-          "output": "/actions/varmory/in/leftpose",
-          "path": "/user/hand/left/pose/raw"
-        },
-        {
-          "output": "/actions/varmory/in/rightpose",
-          "path": "/user/hand/right/pose/raw"
-        },
-        {
-          "output": "/actions/varmory/in/leftpose",
-          "path": "/user/hand/left/pose/tip"
-        },
-        {
-          "output": "/actions/varmory/in/rightpose",
-          "path": "/user/hand/right/pose/tip"
-        }
-      ],
-      "haptics": [],
-      "sources": [
-        {
-          "path": "/user/hand/left/input/joystick",
-          "mode": "joystick",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/varmory/in/touchpad"
+   "action_manifest_version" : 0,
+   "alias_info" : {},
+   "app_key" : "application.generated.unity.justholdonvr.exe",
+   "bindings" : {
+      "/actions/buggy" : {
+         "chords" : [],
+         "haptics" : [],
+         "poses" : [],
+         "skeleton" : [],
+         "sources" : []
+      },
+      "/actions/default" : {
+         "chords" : [],
+         "haptics" : [],
+         "poses" : [],
+         "skeleton" : [],
+         "sources" : []
+      },
+      "/actions/platformer" : {
+         "chords" : [],
+         "haptics" : [],
+         "poses" : [],
+         "skeleton" : [],
+         "sources" : []
+      },
+      "/actions/varmory" : {
+         "chords" : [],
+         "haptics" : [],
+         "poses" : [
+            {
+               "output" : "/actions/varmory/in/leftpose",
+               "path" : "/user/hand/left/pose/base"
             },
-            "position": {
-              "output": "/actions/varmory/in/touchpadaxis"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/left/input/grip",
-          "mode": "button",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/varmory/in/grip"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/left/input/system",
-          "mode": "button",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/varmory/in/menu"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/left/input/trigger",
-          "mode": "trigger",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/varmory/in/trigger"
+            {
+               "output" : "/actions/varmory/in/rightpose",
+               "path" : "/user/hand/right/pose/base"
             },
-            "pull": {
-              "output": "/actions/varmory/in/triggeraxis"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/left/input/x",
-          "mode": "button",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/varmory/in/a"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/left/input/y",
-          "mode": "button",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/varmory/in/b"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/right/input/joystick",
-          "mode": "joystick",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/varmory/in/touchpad"
+            {
+               "output" : "/actions/varmory/in/leftpose",
+               "path" : "/user/hand/left/pose/handgrip"
             },
-            "position": {
-              "output": "/actions/varmory/in/touchpadaxis"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/right/input/grip",
-          "mode": "button",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/varmory/in/grip"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/right/input/a",
-          "mode": "button",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/varmory/in/a"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/right/input/b",
-          "mode": "button",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/varmory/in/b"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/right/input/trigger",
-          "mode": "trigger",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/varmory/in/trigger"
+            {
+               "output" : "/actions/varmory/in/rightpose",
+               "path" : "/user/hand/right/pose/handgrip"
             },
-            "pull": {
-              "output": "/actions/varmory/in/triggeraxis"
+            {
+               "output" : "/actions/varmory/in/leftpose",
+               "path" : "/user/hand/left/pose/raw"
+            },
+            {
+               "output" : "/actions/varmory/in/rightpose",
+               "path" : "/user/hand/right/pose/raw"
+            },
+            {
+               "output" : "/actions/varmory/in/leftpose",
+               "path" : "/user/hand/left/pose/tip"
+            },
+            {
+               "output" : "/actions/varmory/in/rightpose",
+               "path" : "/user/hand/right/pose/tip"
             }
-          }
-        }
-      ],
-      "skeleton": [
-        {
-          "output": "/actions/varmory/in/leftskel",
-          "path": "/user/hand/left/input/skeleton/left"
-        },
-        {
-          "output": "/actions/varmory/in/rightskel",
-          "path": "/user/hand/right/input/skeleton/right"
-        }
-      ]
-    }
-  },
-  "controller_type": "oculus_touch",
-  "description": "",
-  "name": "V Armory Touch Map"
+         ],
+         "skeleton" : [
+            {
+               "output" : "/actions/varmory/in/leftskel",
+               "path" : "/user/hand/left/input/skeleton/left"
+            },
+            {
+               "output" : "/actions/varmory/in/rightskel",
+               "path" : "/user/hand/right/input/skeleton/right"
+            }
+         ],
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/varmory/in/joystick"
+                  },
+                  "position" : {
+                     "output" : "/actions/varmory/in/joystickaxis"
+                  }
+               },
+               "mode" : "joystick",
+               "path" : "/user/hand/left/input/joystick"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/varmory/in/grip"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/varmory/in/menu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/system"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/varmory/in/trigger"
+                  },
+                  "pull" : {
+                     "output" : "/actions/varmory/in/triggeraxis"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/varmory/in/a"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/x"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/varmory/in/b"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/y"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/varmory/in/joystick"
+                  },
+                  "position" : {
+                     "output" : "/actions/varmory/in/touchpadaxis"
+                  }
+               },
+               "mode" : "joystick",
+               "path" : "/user/hand/right/input/joystick"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/varmory/in/grip"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/varmory/in/a"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/a"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/varmory/in/b"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/b"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/varmory/in/trigger"
+                  },
+                  "pull" : {
+                     "output" : "/actions/varmory/in/triggeraxis"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            }
+         ]
+      }
+   },
+   "category" : "steamvr_input",
+   "controller_type" : "oculus_touch",
+   "description" : "This is the default binding for the Oculus Touch Controllers",
+   "name" : "Epicenter Bindings Touch Controllers",
+   "options" : {},
+   "simulated_actions" : []
 }
