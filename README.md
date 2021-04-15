@@ -7,8 +7,7 @@ To start the game, pick up the pistol with one hand, load the magazine using the
 
 Current controls with latest Playable Build
 
-Built for Index/Oculus controllers:
-Vive support soon.
+Index/Oculus controllers:
 
 #### Left joystick
 Move
@@ -29,6 +28,49 @@ Change fire mode
 
 
 #### A
+Release slide catch
+
+Eject magazine
+
+------------
+
+
+#### Trigger
+Fire weapons
+
+Pull pin on grenade
+
+------------
+
+
+#### Grip
+Pick up items
+
+Interact with magazines, attachments, and slides
+
+------------
+
+Vive Wand controllers:
+
+#### Left touchpad
+Move
+
+------------
+
+
+#### Right touchpad
+Turn
+
+------------
+
+
+#### Click touchpad Up
+Change fire mode
+
+------------
+
+
+#### Click touchpad Down
 Release slide catch
 
 Eject magazine
