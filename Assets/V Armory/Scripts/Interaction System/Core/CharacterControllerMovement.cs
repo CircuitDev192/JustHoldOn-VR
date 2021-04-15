@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
@@ -47,6 +48,14 @@ namespace VArmory
 ;           gameObject.layer = LayerMask.NameToLayer("Player");
             velocityHistory.InitializeHistory();
             prevPos = transform.position;
+
+            EventManager.PlayerKilled += PlayerKilled;
+
+        }
+
+        private void PlayerKilled()
+        {
+            movementSpeed = 0f;
         }
 
         bool sprinting;
@@ -243,6 +252,11 @@ namespace VArmory
                 sprinting = false;
 
             updateTime = Time.time;
+        }
+
+        private void OnDestroy()
+        {
+            EventManager.PlayerKilled -= PlayerKilled;
         }
     }
 }

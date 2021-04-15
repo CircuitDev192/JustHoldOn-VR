@@ -138,7 +138,7 @@
                      "output" : "/actions/varmory/in/joystick"
                   },
                   "position" : {
-                     "output" : "/actions/varmory/in/touchpadaxis"
+                     "output" : "/actions/varmory/in/joystickaxis"
                   }
                },
                "mode" : "joystick",

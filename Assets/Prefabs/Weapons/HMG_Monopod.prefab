@@ -381,8 +381,8 @@ MonoBehaviour:
     needsReinit: 0
   startInteractionMode: 1
   endInteractionMode: 2
-  earlyExitCondition: 0
-  SphereBoundsRadius: 0
+  earlyExitCondition: 2
+  SphereBoundsRadius: 1
   boxBounds: {x: 0, y: 0, z: 0}
   RightHandPoser: {fileID: 0}
   LeftHandPoser: {fileID: 0}
@@ -413,6 +413,7 @@ MonoBehaviour:
   fireSelectorRotations: []
   safetySlideLimit: -1
   touchpadDirection: 6
+  safetyIndicators: []
   switchFireModeSounds: []
   fireSelectorInput:
     actionPath: 

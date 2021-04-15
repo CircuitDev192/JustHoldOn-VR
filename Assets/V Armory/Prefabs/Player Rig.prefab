@@ -294,7 +294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594566780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.04}
+  m_LocalPosition: {x: 0, y: 0, z: -0.035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1043255500}
@@ -403,7 +403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628556781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.04}
+  m_LocalPosition: {x: 0, y: 0, z: -0.035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1226070849}
@@ -9957,7 +9957,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.05
-  far clip plane: 1000
+  far clip plane: 200
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -10880,11 +10880,11 @@ MonoBehaviour:
   defaultHand: {fileID: 6662868148112982652}
   characterController: {fileID: 6637662387780798356}
   maxHeight: 2
-  movementSpeed: 3.5
-  turnSpeed: 2.5
+  movementSpeed: 4.5
+  turnSpeed: 3
   fallingMovementSpeedScale: 0.2
   sprintScale: 1.5
-  gravity: -1
+  gravity: -2
   rig: {fileID: 6768544364494631756}
   body: {fileID: 6768410760111034438}
   head: {fileID: 6768858436020570126}
