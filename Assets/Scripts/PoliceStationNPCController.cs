@@ -25,6 +25,11 @@ public class PoliceStationNPCController : MonoBehaviour, IDamageAble
     [SerializeField] private float maxTimeBetweenDialog;
     private Coroutine randomDialog = null;
 
+    public float nextFootstepTime;
+    public AudioClip[] footstepSounds;
+    public AudioClip[] runningSounds;
+    public AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,7 +85,31 @@ public class PoliceStationNPCController : MonoBehaviour, IDamageAble
                     timeToWalk = Time.time + Random.Range(minWalkDelay, maxWalkDelay);
                 }
             }
+
+            PlayFootStepSound();
         }
+    }
+
+    public void PlayFootStepSound()
+    {
+        if (nextFootstepTime > Time.time) return;
+
+        if (animator.GetFloat("Speed_f") <= 0.1f) return;
+
+        if (!shouldRetreat) PlaySound(footstepSounds);
+        else PlaySound(runningSounds);
+
+        nextFootstepTime = Time.time + Mathf.Clamp(1.5f / this.navMeshAgent.speed, 0.4f, 1f);
+    }
+
+    public void PlaySound(AudioClip[] clipArray)
+    {
+        int index = Random.Range(0, clipArray.Length);
+        AudioClip clipToPlay = clipArray[index];
+
+        audioSource.clip = clipToPlay;
+        audioSource.pitch = Random.Range(0.75F, 1.25F);
+        audioSource.Play();
     }
 
     private void DisableFloodLightSounds()
