@@ -7,7 +7,7 @@ To start the game, pick up the pistol with one hand, load the magazine using the
 
 Current controls with latest Playable Build
 
-Index/Oculus controllers:
+##Index/Oculus controllers:
 
 #### Left joystick
 Move
@@ -50,7 +50,7 @@ Interact with magazines, attachments, and slides
 
 ------------
 
-Vive Wand controllers:
+##Vive Wand controllers:
 
 #### Left touchpad
 Move
