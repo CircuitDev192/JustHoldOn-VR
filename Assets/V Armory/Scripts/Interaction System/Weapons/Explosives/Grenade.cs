@@ -5,7 +5,7 @@ using Valve.VR;
 
 namespace VArmory
 {
-    public class Grenade : ExplosiveItem, IDamageAble
+    public class Grenade : ExplosiveItem
     {
         [SerializeField] protected SocketSlide pinSlide;
 
@@ -75,11 +75,6 @@ namespace VArmory
             armed = false;
         }
 
-        void OnCollisionEnter(Collision col)
-        {
-            if (col.relativeVelocity.magnitude > forceThreshold && armed)
-                Explode();
-        }
 
         IEnumerator EjectHandle()
         {
@@ -103,11 +98,6 @@ namespace VArmory
             }
 
             yield return ExplodeRoutine();
-        }
-
-        public void Damage(float damage, string limbName)
-        {
-            explosive.Explode(0);
         }
     }
 }

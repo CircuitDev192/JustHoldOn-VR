@@ -11,7 +11,7 @@ namespace VArmory
         [SerializeField] protected float explosionForce;
         [SerializeField] protected float upwardForce;
         [SerializeField] protected AnimationCurve forceOverDistanceCurve;
-        [SerializeField] protected Transform explosion;
+        [SerializeField] protected GameObject explosion;
 
         [SerializeField] protected bool explodeOnStart = true;
         [SerializeField] protected bool destroyOnExplode;
@@ -97,10 +97,14 @@ namespace VArmory
                 rb.AddForce(-(transform.position - rb.transform.position) * forceCurve * force, ForceMode.Impulse);
             }
 
-            if (explosion) Instantiate(explosion, transform.position, transform.rotation);
+            if (explosion)
+            {
+                GameObject obj = Instantiate(explosion, transform.position, Quaternion.identity);
+                Destroy(obj, 2f);
+            }
 
             if (destroyOnExplode)
-                Destroy(gameObject, 0.05f);
+                Destroy(gameObject, 2.5f);
 
             yield return null;
         }

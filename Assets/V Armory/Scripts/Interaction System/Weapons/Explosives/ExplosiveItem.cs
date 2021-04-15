@@ -13,6 +13,7 @@ namespace VArmory
         [SerializeField] protected float delay;
 
         [SerializeField] protected AudioClip explosionSFX;
+        [SerializeField] protected AudioSource audioSource;
 
         protected override void Start()
         {
@@ -71,7 +72,7 @@ namespace VArmory
             Detach();
             DetachSlot();
 
-            if (explosionSFX) AudioSource.PlayClipAtPoint(explosionSFX, transform.position);
+            if (explosionSFX) audioSource.PlayOneShot(explosionSFX, 1f);
 
             EventManager.TriggerSoundGenerated(this.transform.position, 75f);
 
