@@ -30,6 +30,8 @@ namespace VArmory
 
         protected int selectedFireModeIndex;
 
+        [SerializeField] protected GameObject[] safetyIndicators;
+
         [SerializeField] protected List<AudioClip> switchFireModeSounds = new List<AudioClip>();
 
         [SerializeField] protected SteamVR_Action_Boolean fireSelectorInput;
@@ -49,6 +51,19 @@ namespace VArmory
                 return;
 
             selectedFireModeIndex = selectedFireModeIndex < availableFireModes.Count - 1 ? selectedFireModeIndex + 1 : 0;
+
+            //if selected = 0 set safety indicator to green. else, red.
+            if (selectedFireModeIndex == 0)
+            {
+                safetyIndicators[0].SetActive(true);
+                safetyIndicators[1].SetActive(false);
+            }
+            else
+            {
+                safetyIndicators[0].SetActive(false);
+                safetyIndicators[1].SetActive(true);
+            }
+
             fireMode = availableFireModes[selectedFireModeIndex];
 
             transform.localEulerAngles = fireSelectorRotations[selectedFireModeIndex];
