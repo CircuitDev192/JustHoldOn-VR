@@ -10,9 +10,9 @@ namespace VArmory
 
         public Vector3 climbGrabPosition;
 
-        protected override void FixedUpdate()
+        protected override void Update()
         {
-            base.FixedUpdate();
+            base.Update();
 
             if (PrimaryHand)
                 if (Vector3.Distance(climbGrabPosition, PrimaryHand.transform.position) > 0.75f)

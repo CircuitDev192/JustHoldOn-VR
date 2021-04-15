@@ -32,7 +32,7 @@ public class WeatherManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         foreach(GameObject tile in weatherTiles)
         {
@@ -43,27 +43,30 @@ public class WeatherManager : MonoBehaviour
             else tile.SetActive(true);
         }
 
-        StartCoroutine(ManageSounds());
-    }
-
-    private IEnumerator ManageSounds()
-    {
-        if(Time.time > timeToNextLightning)
+        if (Time.time > timeToNextLightning)
         {
             AudioClip clip = lightningSounds[Random.Range(0, lightningSounds.Length)];
             audioSource.PlayOneShot(clip);
             timeToNextLightning = Time.time + Random.Range(minTimeBetweenLightning, maxTimeBetweenLightning);
 
             lightningFlash.enabled = true;
-            yield return new WaitForSeconds(0.3f);
-            lightningFlash.enabled = false;
+            StartCoroutine(ManageSounds());
+            
         }
 
-        if(Time.time > timeToNextThunder)
+        if (Time.time > timeToNextThunder)
         {
             AudioClip clip = thunderSounds[Random.Range(0, thunderSounds.Length)];
             audioSource.PlayOneShot(clip);
             timeToNextThunder = Time.time + Random.Range(minTimeBetweenThunder, maxTimeBetweenThunder);
         }
+
+        
+    }
+
+    private IEnumerator ManageSounds()
+    {
+        yield return new WaitForSeconds(0.3f);
+        lightningFlash.enabled = false;
     }
 }

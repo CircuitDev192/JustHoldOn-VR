@@ -8,7 +8,7 @@ public class ZombieController : ZombieContext
         InitializeContext();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         ManageState(this);
     }

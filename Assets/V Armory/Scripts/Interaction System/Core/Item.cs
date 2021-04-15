@@ -219,13 +219,17 @@ namespace VArmory
             }
         }
 
-        protected virtual void FixedUpdate()
+        /*protected virtual void FixedUpdate()
         {
             AutoDrop();
         }
+        */
 
         protected virtual void Update()
         {
+
+            AutoDrop();
+
             Hand tempHand = PrimaryHand ?? SecondaryHand;
 
             if (tempHand)

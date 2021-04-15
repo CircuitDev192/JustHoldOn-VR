@@ -33,9 +33,9 @@ namespace VArmory
             rb.maxAngularVelocity = 100f;
         }
 
-        protected override void FixedUpdate()
+        protected override void Update()
         {
-            base.FixedUpdate();
+            base.Update();
 
             currentAngle = hinge.angle;
 

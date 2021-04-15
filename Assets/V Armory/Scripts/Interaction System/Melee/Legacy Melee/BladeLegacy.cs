@@ -69,9 +69,9 @@ namespace VArmory
             }
         }
 
-        protected override void FixedUpdate()
+        protected override void Update()
         {
-            base.FixedUpdate();
+            base.Update();
 
             foreach (StabJointLegacy stabJoint in stabJoints)
             {
