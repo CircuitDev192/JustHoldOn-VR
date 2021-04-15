@@ -1111,9 +1111,9 @@ MonoBehaviour:
   continuous: 0
   interactionPoint: {fileID: 0}
   ejectInput:
-    actionPath: 
+    actionPath: /actions/VArmory/in/A
     needsReinit: 0
-  ejectTouchpadDirection: 3
+  ejectTouchpadDirection: 6
   acceptedTags:
   - M1911 Magazine
   potentialSlot: {fileID: 0}
@@ -1351,6 +1351,7 @@ MonoBehaviour:
   slideForwardSpeed: 40
   slideBackSpeed: 50
   dropSlideForwardSpeed: 20
+  magWell: {fileID: 7525842212330229644}
   slideStopPosition: 0.1
   catchBulletPosition: 0.5
   restingOnSlideStop: 0
@@ -1634,6 +1635,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   slide: {fileID: 7525998631676157878}
+  magWell: {fileID: 7525842212330229644}
   recoilManager: {fileID: 7526068782333563943}
   stackTriggerPulls: 0
   slideStopOnEmptyMag: 1

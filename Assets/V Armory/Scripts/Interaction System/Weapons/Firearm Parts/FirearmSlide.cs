@@ -14,6 +14,8 @@ namespace VArmory
 
         [SerializeField] protected float dropSlideForwardSpeed;
 
+        [SerializeField] protected SocketSlide magWell;
+
         protected bool slideStop;
 
         public bool SlideStop
@@ -36,10 +38,23 @@ namespace VArmory
                             StartCoroutine("AnimateSlideForward", dropSlideForwardSpeed);
                         }
             }
+
+            get
+            {
+                return slideStop;
+            }
         }
 
         [SerializeField] [Range(-1, 1)] protected float slideStopPosition;
         [SerializeField] [Range(0, 1)] protected float catchBulletPosition;
+
+        public float SlideStopPosition
+        {
+            get
+            {
+                return slideStopPosition;
+            }
+        }
 
         public delegate void SlideStopEvent();
         public SlideStopEvent _PulledPassedSlideStop;
@@ -117,6 +132,9 @@ namespace VArmory
 
         public void SlideStopTouchpadInput()
         {
+            if (magWell.slideObject != null)
+                if(magWell.slideObject.GetComponent<Magazine>().Empty) return;
+
             switch (slideStopFunction)
             {
                 case SlideStopFunction.none:

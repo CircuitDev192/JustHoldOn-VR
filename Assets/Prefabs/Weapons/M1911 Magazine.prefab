@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1920481634910145774}
   m_LocalRotation: {x: -0.17948909, y: 0, z: 0, w: 0.98376}
   m_LocalPosition: {x: 0.000000005654196, y: -0.05186476, z: 0.04769017}
-  m_LocalScale: {x: 1, y: 1.0000002, z: 1}
+  m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000001}
   m_Children:
   - {fileID: 8078564134437748775}
   - {fileID: 2167564637528588218}
@@ -182,8 +182,8 @@ MonoBehaviour:
     colliderEnabled: 1
     isTrigger: 0
     parent: 0
-  positionOffset: {x: 0, y: 0.13088822, z: -0.008757668}
-  rotationOffset: {x: 340, y: 180, z: 0}
+  positionOffset: {x: 0, y: 0.16363566, z: 0.08833429}
+  rotationOffset: {x: 330, y: 180, z: 0}
   flippedPositionOffset: {x: 0, y: 0, z: 0}
   flippedRotationOffset: {x: 0, y: 0, z: 0}
   twoHandRotationOffset: {x: 0, y: 0, z: 0}

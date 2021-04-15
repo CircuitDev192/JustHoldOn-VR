@@ -40,6 +40,8 @@ namespace VArmory
         [SerializeField] protected bool isMountedWeapon = false;
         public StaticPosForHMG staticPosScript;
 
+        private bool didntEject = false;
+
         protected override void Start()
         {
             base.Start();
@@ -225,6 +227,23 @@ namespace VArmory
 
         void EjectMagazine()
         {
+
+            if (slide.slidePosition >= slide.SlideStopPosition && !didntEject)
+            {
+                if (magWell.slideObject != null)
+                    if (magWell.slideObject.GetComponent<Magazine>().CurrentRounds >= magWell.slideObject.GetComponent<Magazine>().MaxRounds - 1)
+                    {
+                        didntEject = true;
+                        return;
+                    }
+            }
+            else
+            {
+                didntEject = false;
+            }
+            
+
+
             if (magWell && magOnPressDown)
             {
                 magWell.EjectSlider();

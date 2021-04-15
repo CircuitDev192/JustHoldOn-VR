@@ -685,6 +685,7 @@ MonoBehaviour:
   slideForwardSpeed: 40
   slideBackSpeed: 40
   dropSlideForwardSpeed: 20
+  magWell: {fileID: 604705631780624531}
   slideStopPosition: 0.1
   catchBulletPosition: 0.5
   restingOnSlideStop: 0
@@ -1970,9 +1971,9 @@ MonoBehaviour:
   continuous: 0
   interactionPoint: {fileID: 0}
   ejectInput:
-    actionPath: 
-    needsReinit: 1
-  ejectTouchpadDirection: 3
+    actionPath: /actions/VArmory/in/A
+    needsReinit: 0
+  ejectTouchpadDirection: 6
   acceptedTags:
   - Rifle Magazine
   potentialSlot: {fileID: 0}
@@ -3136,6 +3137,7 @@ MonoBehaviour:
   slideForwardSpeed: 0
   slideBackSpeed: 0
   dropSlideForwardSpeed: 20
+  magWell: {fileID: 604705631780624531}
   slideStopPosition: 0
   catchBulletPosition: 0
   restingOnSlideStop: 0
