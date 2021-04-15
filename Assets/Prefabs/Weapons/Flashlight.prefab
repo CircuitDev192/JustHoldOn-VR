@@ -170,8 +170,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 140
-  m_Range: 30.2
+  m_Intensity: 130.2
+  m_Range: 50
   m_SpotAngle: 31.06611
   m_InnerSpotAngle: 0
   m_CookieSize: 10
@@ -265,8 +265,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 0
   intensityModeAdvanced: 0
-  intensityInside: 0.51
-  intensityOutside: 0.51
+  intensityInside: 0.2
+  intensityOutside: 0.2
   blendingMode: 0
   spotAngleFromLight: 1
   spotAngle: 31.06611
@@ -282,7 +282,7 @@ MonoBehaviour:
   attenuationEquation: 1
   attenuationCustomBlending: 0.5
   fallOffStart: 0
-  fallOffEnd: 30.2
+  fallOffEnd: 50
   depthBlendDistance: 2
   cameraClippingDistance: 0.5
   glareFrontal: 1
@@ -728,7 +728,7 @@ MonoBehaviour:
   autoDropDot: 0.5
   autoAttachSecondaryToPrimary: {fileID: 0}
   dropStack: 1
-  useFlippedOffset: 1
+  useFlippedOffset: 0
   flipOffsetInput:
     actionPath: /actions/VArmory/in/B
     needsReinit: 0

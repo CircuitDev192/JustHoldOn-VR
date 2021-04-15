@@ -190,7 +190,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 140
+  m_Intensity: 159.68
   m_Range: 30.2
   m_SpotAngle: 15
   m_InnerSpotAngle: 0
@@ -285,8 +285,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 0
   intensityModeAdvanced: 0
-  intensityInside: 0.51
-  intensityOutside: 0.51
+  intensityInside: 0.2
+  intensityOutside: 0.2
   blendingMode: 0
   spotAngleFromLight: 1
   spotAngle: 15
@@ -606,7 +606,7 @@ MonoBehaviour:
   flipOffsetInput:
     actionPath: 
     needsReinit: 0
-  useAttachmentIV: {fileID: 972236808611047301}
+  useAttachmentIV: {fileID: 0}
   useSounds:
   - {fileID: 8300000, guid: 61931192c6f9a054983403822410b4ca, type: 3}
   - {fileID: 8300000, guid: 3a8a32e35cd446248bcde00082855545, type: 3}

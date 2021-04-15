@@ -425,9 +425,9 @@ MonoBehaviour:
     type: 3}
   sparkEffect: {fileID: 4959502850054142828, guid: 10be5bd801d74c9438c4af806db4a606,
     type: 3}
-  fastThreshold: 13
-  mediumThreshold: 12
-  slowThreshold: 11
+  fastThreshold: 9
+  mediumThreshold: 7.8
+  slowThreshold: 6.5
 --- !u!82 &4101827397112759999
 AudioSource:
   m_ObjectHideFlags: 0

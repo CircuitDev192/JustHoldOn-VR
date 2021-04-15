@@ -45,7 +45,7 @@ public class ManagedLightController : MonoBehaviour
     private float CalculatePointLightIllumination(Vector3 position, float distance)
     {
         // This should be the correct attenuation calculation
-        return managedLight.intensity / (distance * distance);
+        return (managedLight.intensity * 10f) / (distance * distance);
     }
 
     private float CalculateSpotLightIllumination(Vector3 position, float distance)
@@ -58,7 +58,7 @@ public class ManagedLightController : MonoBehaviour
         if (angleBetween > managedLight.spotAngle / 2f) return 0f;
 
         // Hopefully this calculation will suffice
-        return managedLight.intensity / (distance * distance);
+        return (managedLight.intensity * 10f) / (distance * distance);
     }
 
     private void OnDestroy()
