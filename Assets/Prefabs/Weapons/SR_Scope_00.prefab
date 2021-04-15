@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2356850876048677668}
   - component: {fileID: 2356850876048677671}
   - component: {fileID: 2356850876048677674}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SR_Scope_00
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
     actionPath: /actions/VArmory/in/Grip
     needsReinit: 0
   startInteractionMode: 1
-  endInteractionMode: 2
+  endInteractionMode: 3
   earlyExitCondition: 0
   SphereBoundsRadius: 0
   boxBounds: {x: 0, y: 0, z: 0}

@@ -730,7 +730,7 @@ MonoBehaviour:
   dropStack: 1
   useFlippedOffset: 0
   flipOffsetInput:
-    actionPath: /actions/VArmory/in/B
+    actionPath: /actions/VArmory/in/Touchpad
     needsReinit: 0
   useSounds:
   - {fileID: 8300000, guid: 61931192c6f9a054983403822410b4ca, type: 3}
@@ -769,7 +769,7 @@ MonoBehaviour:
     actionPath: /actions/VArmory/in/Grip
     needsReinit: 0
   startInteractionMode: 1
-  endInteractionMode: 2
+  endInteractionMode: 3
   earlyExitCondition: 0
   SphereBoundsRadius: 0
   boxBounds: {x: 0, y: 0, z: 0}

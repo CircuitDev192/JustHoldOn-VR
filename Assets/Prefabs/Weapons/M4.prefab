@@ -694,9 +694,9 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   slideStopInput:
-    actionPath: /actions/VArmory/in/A
-    needsReinit: 0
-  slideStopTouchpadDirection: 6
+    actionPath: 
+    needsReinit: 1
+  slideStopTouchpadDirection: 3
   slideStopFunction: 1
 --- !u!1 &604705630124791366
 GameObject:
@@ -931,7 +931,7 @@ MonoBehaviour:
     actionPath: /actions/VArmory/in/Grip
     needsReinit: 0
   startInteractionMode: 1
-  endInteractionMode: 2
+  endInteractionMode: 3
   earlyExitCondition: 0
   SphereBoundsRadius: 0
   boxBounds: {x: 0, y: 0, z: 0}
@@ -963,7 +963,7 @@ MonoBehaviour:
   availableFireModes: 000000000100000002000000
   fireSelectorRotations: []
   safetySlideLimit: -1
-  touchpadDirection: 6
+  touchpadDirection: 2
   safetyIndicators:
   - {fileID: 990835520806189774}
   - {fileID: 2186537936330267811}
@@ -973,8 +973,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c36b9b0c7833d7c41b7ce234c2ae7c80, type: 3}
   - {fileID: 8300000, guid: fbbda789d3db5f148b3e44f54d4777f3, type: 3}
   fireSelectorInput:
-    actionPath: /actions/VArmory/in/B
-    needsReinit: 0
+    actionPath: 
+    needsReinit: 1
 --- !u!114 &604705630124791364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1971,9 +1971,9 @@ MonoBehaviour:
   continuous: 0
   interactionPoint: {fileID: 0}
   ejectInput:
-    actionPath: /actions/VArmory/in/A
-    needsReinit: 0
-  ejectTouchpadDirection: 6
+    actionPath: 
+    needsReinit: 1
+  ejectTouchpadDirection: 3
   acceptedTags:
   - Rifle Magazine
   potentialSlot: {fileID: 0}

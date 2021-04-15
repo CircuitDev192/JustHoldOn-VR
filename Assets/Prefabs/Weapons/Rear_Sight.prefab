@@ -180,7 +180,7 @@ MonoBehaviour:
     actionPath: /actions/VArmory/in/Grip
     needsReinit: 0
   startInteractionMode: 1
-  endInteractionMode: 2
+  endInteractionMode: 3
   earlyExitCondition: 0
   SphereBoundsRadius: 0
   boxBounds: {x: 0, y: 0, z: 0}

@@ -1111,9 +1111,9 @@ MonoBehaviour:
   continuous: 0
   interactionPoint: {fileID: 0}
   ejectInput:
-    actionPath: /actions/VArmory/in/A
-    needsReinit: 0
-  ejectTouchpadDirection: 6
+    actionPath: 
+    needsReinit: 1
+  ejectTouchpadDirection: 3
   acceptedTags:
   - M1911 Magazine
   potentialSlot: {fileID: 0}
@@ -1360,9 +1360,9 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   slideStopInput:
-    actionPath: /actions/VArmory/in/A
-    needsReinit: 0
-  slideStopTouchpadDirection: 6
+    actionPath: 
+    needsReinit: 1
+  slideStopTouchpadDirection: 3
   slideStopFunction: 1
 --- !u!1 &7526012737163496759
 GameObject:
@@ -1635,7 +1635,6 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   slide: {fileID: 7525998631676157878}
-  magWell: {fileID: 7525842212330229644}
   recoilManager: {fileID: 7526068782333563943}
   stackTriggerPulls: 0
   slideStopOnEmptyMag: 1
@@ -1677,7 +1676,7 @@ MonoBehaviour:
     actionPath: /actions/VArmory/in/Grip
     needsReinit: 0
   startInteractionMode: 1
-  endInteractionMode: 2
+  endInteractionMode: 3
   earlyExitCondition: 0
   SphereBoundsRadius: 0
   boxBounds: {x: 0, y: 0, z: 0}
@@ -1709,7 +1708,7 @@ MonoBehaviour:
   availableFireModes: 0000000001000000
   fireSelectorRotations: []
   safetySlideLimit: -1
-  touchpadDirection: 6
+  touchpadDirection: 2
   safetyIndicators:
   - {fileID: 8483727116183901465}
   - {fileID: 7619297477236491536}
@@ -1719,8 +1718,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e36c9eb71ea78fd45a570d4cd59571c4, type: 3}
   - {fileID: 8300000, guid: e435ea3ad4e1a2b4fa17fe6c73cd61de, type: 3}
   fireSelectorInput:
-    actionPath: /actions/VArmory/in/B
-    needsReinit: 0
+    actionPath: 
+    needsReinit: 1
 --- !u!114 &7526068782333563943
 MonoBehaviour:
   m_ObjectHideFlags: 0

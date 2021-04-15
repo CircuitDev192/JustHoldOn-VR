@@ -329,7 +329,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   reverseHandAlignment: 0
-  storable: 1
+  storable: 0
   size: 0
   stackable: 0
   stackableID: 
@@ -380,7 +380,7 @@ MonoBehaviour:
     actionPath: /actions/VArmory/in/Grip
     needsReinit: 0
   startInteractionMode: 1
-  endInteractionMode: 2
+  endInteractionMode: 3
   earlyExitCondition: 2
   SphereBoundsRadius: 1
   boxBounds: {x: 0, y: 0, z: 0}
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9aba779795e2d4681b08ed1377e70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pos: {fileID: 0}
+  pos: {fileID: 2521883323611118614}
 --- !u!1 &2515502570205786378
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +905,7 @@ MonoBehaviour:
   slideForwardSpeed: 0
   slideBackSpeed: 0
   dropSlideForwardSpeed: 20
+  magWell: {fileID: 0}
   slideStopPosition: 0
   catchBulletPosition: 0
   restingOnSlideStop: 0
@@ -1356,7 +1357,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.06316633, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.02573688, z: -0.001}
+  m_ConnectedAnchor: {x: 0, y: 0.02573676, z: -0.001}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -1376,18 +1377,18 @@ ConfigurableJoint:
     spring: 1
     damper: 0.5
   m_LowAngularXLimit:
-    limit: -31.626553
+    limit: -61.871494
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 29.783548
+    limit: 52.880672
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
     spring: 1
     damper: 0.5
   m_AngularYLimit:
-    limit: 37.08215
+    limit: 69.256165
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -1541,7 +1542,7 @@ MonoBehaviour:
     actionPath: /actions/VArmory/in/Grip
     needsReinit: 0
   startInteractionMode: 1
-  endInteractionMode: 2
+  endInteractionMode: 3
   earlyExitCondition: 0
   SphereBoundsRadius: 0
   boxBounds: {x: 0, y: 0, z: 0}
@@ -2021,6 +2022,7 @@ MonoBehaviour:
   slideForwardSpeed: 28
   slideBackSpeed: 28
   dropSlideForwardSpeed: 20
+  magWell: {fileID: 0}
   slideStopPosition: 0
   catchBulletPosition: 0
   restingOnSlideStop: 0
@@ -2218,7 +2220,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5523538481535758008}
-  m_LocalRotation: {x: -0, y: 0.88909686, z: -0, w: 0.45771924}
+  m_LocalRotation: {x: 0, y: 0.88909703, z: 0, w: 0.45771885}
   m_LocalPosition: {x: 73.46904, y: 1.285, z: -132.19142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2590,7 +2592,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 8282299481611013729}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1

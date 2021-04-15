@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6544357934280847460}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 6544357934989066040}
   m_RootOrder: 1
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 6544357934989066043}
   - component: {fileID: 6544357934989066042}
   - component: {fileID: 6544357934989066041}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Foregrip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,10 +306,10 @@ MonoBehaviour:
   flipOffsetInput:
     actionPath: 
     needsReinit: 0
-  useAttachmentIV: {fileID: 0}
+  useAttachmentIV: {fileID: 6544357934989066041}
   useSounds: []
   useAttachmentInput:
-    actionPath: 
+    actionPath: /actions/VArmory/in/Trigger
     needsReinit: 0
   type: 3
   AttachmentPosOffset: {x: 0, y: 0, z: 0}
@@ -342,7 +342,7 @@ MonoBehaviour:
     actionPath: /actions/VArmory/in/Grip
     needsReinit: 0
   startInteractionMode: 1
-  endInteractionMode: 2
+  endInteractionMode: 3
   earlyExitCondition: 0
   SphereBoundsRadius: 0
   boxBounds: {x: 0, y: 0, z: 0}
@@ -385,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 8493159065919744105}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 6544357934989066040}
   m_RootOrder: 0

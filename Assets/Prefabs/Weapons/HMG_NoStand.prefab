@@ -109,7 +109,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.06316633, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.02573676, z: -0.001}
+  m_ConnectedAnchor: {x: -0.0000030728063, y: 0.02573682, z: 0.0000032544124}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -641,6 +641,7 @@ MonoBehaviour:
   slideForwardSpeed: 0
   slideBackSpeed: 0
   dropSlideForwardSpeed: 20
+  magWell: {fileID: 0}
   slideStopPosition: 0
   catchBulletPosition: 0
   restingOnSlideStop: 0
@@ -915,7 +916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908387576369014860}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0374295, z: 0.001}
+  m_LocalPosition: {x: 0, y: 0.0374295, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8373573733290754677}
@@ -1161,7 +1162,7 @@ MonoBehaviour:
     actionPath: /actions/VArmory/in/Grip
     needsReinit: 0
   startInteractionMode: 1
-  endInteractionMode: 2
+  endInteractionMode: 3
   earlyExitCondition: 0
   SphereBoundsRadius: 0
   boxBounds: {x: 0, y: 0, z: 0}
@@ -1194,6 +1195,7 @@ MonoBehaviour:
   fireSelectorRotations: []
   safetySlideLimit: -1
   touchpadDirection: 6
+  safetyIndicators: []
   switchFireModeSounds: []
   fireSelectorInput:
     actionPath: 
@@ -1438,7 +1440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9aba779795e2d4681b08ed1377e70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pos: {fileID: 0}
+  pos: {fileID: 1904146936498264254}
 --- !u!1 &8373573733290754674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,7 +1835,7 @@ Transform:
   m_GameObject: {fileID: 8373573734439668240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.777, y: 0.793, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.538462, y: 1.538462, z: 1.538462}
   m_Children:
   - {fileID: 1905669661638771090}
   m_Father: {fileID: 0}
@@ -2325,6 +2327,7 @@ MonoBehaviour:
   slideForwardSpeed: 40
   slideBackSpeed: 40
   dropSlideForwardSpeed: 20
+  magWell: {fileID: 0}
   slideStopPosition: 0
   catchBulletPosition: 0
   restingOnSlideStop: 0
